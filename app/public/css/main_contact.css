@@ -1,0 +1,40 @@
+
+.contact{
+    max-width: 773px;
+    width: 100%;
+    margin: 0 auto;
+}
+.contact form{
+    width: 50%;
+    margin: 25px auto;
+}
+
+.contact form input{
+    display: flex;
+    flex-direction: column;
+}
+
+.message-confirmation{
+    background-color: rgb(63, 170, 63);
+    font-size: 1.7rem;
+    width: 50%;
+    margin: 0 auto;
+    padding: 5px 5px;
+}
+.message-erreur{
+    background-color: rgb(209, 35, 35);
+    font-size: 1.7rem;
+    color: white;
+    text-align: center;
+    width: 60%;
+    padding: 5px 5px;
+    margin: 5px auto;
+}
+.envoie-contact{
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: rgb(66, 66, 66);
+    color: white;
+    border: none;
+    text-transform: uppercase;
+}

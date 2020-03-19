@@ -1,0 +1,22 @@
+.inspiration{
+    max-width: 773px;
+    margin: 0 auto;
+}
+.inspiration h2{
+    text-align: center;
+    font-size: 2.5rem;
+}
+.inspiration article{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.inspiration article img{
+    width: 32%;
+    padding: 8px 0;
+}
+
+.inspiration article img:nth-child(0n+4),
+.inspiration article img:last-child{
+    width: 100%;
+}

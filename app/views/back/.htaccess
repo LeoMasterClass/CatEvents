@@ -1,0 +1,4 @@
+Authname "Espace administration"
+Authtype Basic
+AuthUserFile "C:/laragon/www/CatEventsMVC/administration.php/.htpasswd"
+Require valid-user

@@ -1,0 +1,15 @@
+{
+    "name": "kercode4/cat-events-mvc",
+    "authors": [
+        {
+            "name": "leo lorin",
+            "email": "leolorin9@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4" :{
+            "Projet\\" : "./app/"
+        }
+    },
+    "require": {}
+}
