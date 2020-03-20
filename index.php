@@ -6,7 +6,6 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 try {
 $controllerFront = new \Projet\controllers\ControllerFront();
-
 if(isset($_GET['action'])){
     if($_GET['action'] == 'contact'){
         $controllerFront->contactFront();
@@ -26,20 +25,8 @@ if(isset($_GET['action'])){
 }
 
 }catch(Exception $e){
-
-}
-
-try {
     $controllerFront = new \Projet\controllers\ControllerBack();
-    
-    if(isset($_GET['action'])){
-        if($_GET['action'] == 'admin'){
-            $controllerFront->adminBack();
-        }
-    }else{
-        $controllerFront->home();
+    if($_GET['action'] == 'admin'){
+        $controllerFront->adminBack();
     }
-    
-    }catch(Exception $e){
-    
-    }
+}

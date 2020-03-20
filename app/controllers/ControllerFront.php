@@ -29,15 +29,15 @@ class ControllerFront
                 $validation =false;
                 $errors[] = "Tout les champs son obligatoire !!!!";
             }
-        
-            if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+
+            else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
                 $validation = false;
         
                 $errors[] = "L'adresse email n'est pas valide";
             }
         
 
-            if($validation){
+            else if($validation){
                 $to = "gaylor273@outlook.fr";
                 $sujet = 'nouveau message de ' . $nom;
                 $message = '
@@ -62,10 +62,7 @@ class ControllerFront
 
     
             }
-            unset($_POST['nom']);
-            unset($_POST['email']);
-            unset($_POST['objet']);
-            unset($_POST['texte']);
+
             return $errors;
         }
 

@@ -1,1 +1,1 @@
-<h2 class="title-admin">Administration </h2>
+<h2 class="title-admin font">Administration </h2>

@@ -6,7 +6,6 @@
 
 
 
-
 <?php
 include_once 'app/views/front/layouts/footer.php'
 ?>

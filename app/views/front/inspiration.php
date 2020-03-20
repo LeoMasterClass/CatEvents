@@ -7,7 +7,7 @@ include_once "app/views/front/layouts/header.php"
 <main class="container">
     <div class="part2">
     <section class="inspiration">  
-        <h2 class="font-balloo-chettan">Inspirations</h2>
+        <h1 class="font-titre">Inspirations</h2>
         <article>
             <?php while($postimage = $postimages->fetch()) : ?>
 

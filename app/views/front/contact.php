@@ -36,29 +36,28 @@ if(!empty($_POST)){
             endif
             ?>
             <div class="">
-                <div class="">
-                <label for="nom">Votre Nom(obligatoire)</label>
+                <div class="input-contact">
+                <label for="nom" class="font-texte">Votre Nom(obligatoire)</label>
                     <input type="text" name="nom" placeholder="" value="<?php if(isset($_POST['nom']))echo $_POST['nom'] ?>">
                 </div>
-                <div class="">
-                <label for="nom">Votre Email(obligatoire)</label>
+                <div class="input-contact">
+                <label for="nom" class="font-texte">Votre Email(obligatoire)</label>
                     <input type="text" name="email" placeholder="" value="<?php if(isset($_POST['email']))echo $_POST['email'] ?>">
                 </div>
-                <div class="">
-                <label for="nom">Objet</label>
+                <div class="input-contact">
+                <label for="nom" class="font-texte">Objet</label>
                     <input type="text" name="objet" placeholder="" value="<?php if(isset($_POST['objet']))echo $_POST['objet'] ?>">
                 </div>
-                <div class="">
-                <label for="nom">Votre message</label>
-                    <textarea name="texte" placeholder=""<?php if(isset($_POST['texte']))echo $_POST['texte'] ?>></textarea>
+                <div class="input-contact">
+                <label for="nom" class="font-texte">Votre message</label>
+                    <textarea name="texte" cols="40" rows="10" placeholder=""<?php if(isset($_POST['texte']))echo $_POST['texte'] ?>></textarea>
                 </div>
             </div>
 
             <div class="">
-                <div class="">
-                    <input class="envoie-contact font-balloo" type="submit" value="Envoyer">
-                </div>
+                <input class="envoie-contact font-balloo" type="submit" value="Envoyer">
             </div>
+
         </form>
 
         </section>
