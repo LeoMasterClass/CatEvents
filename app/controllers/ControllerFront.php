@@ -90,6 +90,9 @@ class ControllerFront
         require 'app/views/front/inspiration.php';
     }
     function diyFront(){
+        $diyFront = new \Projet\Models\DiyManager();
+        $diy = $diyFront->diy();
+
         require 'app/views/front/diy.php';
     }
 

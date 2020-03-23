@@ -20,14 +20,6 @@ if(isset($_GET['action'])){
         $controllerFront->boutiqueFront();
     }else if($_GET['action'] == 'diy'){
         $controllerFront->diyFront();
-    }else if($_GET['action'] == 'admin'){
-        $controllerBack->adminBack();
-    }else if($_GET['action'] == 'connexion'){
-        $controllerBack->connexionBack();
-    }else if($_GET['action'] == 'inscription'){
-        $controllerBack->inscriptionBack();
-    }else if($_GET['action'] == 'compte'){
-        $controllerBack->compteBack();
     }
 }else{
     $controllerFront->home();

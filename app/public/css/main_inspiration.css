@@ -17,6 +17,8 @@
 }
 
 .inspiration article img:nth-child(0n+4),
-.inspiration article img:last-child{
-    width: 100%;
+.inspiration article img:nth-child(0n+5),
+.inspiration article img:nth-child(0n+9),
+.inspiration article img:nth-child(0n+10){
+    width: 49%;
 }

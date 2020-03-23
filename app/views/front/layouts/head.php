@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="app/public/css/main_quisuisje.css">    
     <link rel="stylesheet" href="app/public/css/main_contact.css">
     <link rel="stylesheet" href="app/public/css/main_inspiration.css">    
+    <link rel="stylesheet" href="app/public/css/main_diy.css">
     <link rel="stylesheet" href="app/public/css/connexion.css">
     <link rel="stylesheet" href="app/public/css/footer.css">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2&display=swap" rel="stylesheet">

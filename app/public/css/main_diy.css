@@ -1,0 +1,41 @@
+.diy{
+    max-width: 773px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.titre-diy{
+    text-align: center;
+    font-size: 2.5rem;
+}
+.diy article{
+    width: 45%;
+    position: relative;
+    margin-top: 30px;
+}
+.diy article:hover{
+    top: -10px;
+    left: -10px;
+    box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.719);
+}
+.diy article img{
+    width: 100%;
+}
+.diy article .hoverDIY{
+    position: absolute;
+    top: 25%;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+}
+.diy article .hoverDIY:hover{
+    opacity: 1;
+}
+
+.diy h2{
+    text-align: center;
+}
