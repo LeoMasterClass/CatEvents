@@ -14,7 +14,7 @@
 
         <img src="<?= $article['image_pres'] ?>" alt="">
         <div class="hoverDIY">
-            <h2 class="font-texte"><?= $article['title'] ?></h2>
+            <a href=""><h2 class="font-texte"><?= $article['title'] ?></h2></a>
         </div>
 
     </article>
