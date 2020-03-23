@@ -1,0 +1,64 @@
+.connexion,
+.inscription{
+    max-width: 773px;
+    margin: 50 auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.connexion h1,
+.inscription h1{
+    text-align: center;
+    font-size: 2rem;
+}
+.connexion .input-connexion,
+.inscription .input-inscription{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+}
+.connexion .input-connexion label,
+.inscription .input-inscription label{
+    color: #464646;
+    font-size: 1.3rem;
+}
+.connexion .input-connexion input,
+.inscription .input-inscription input{
+    border-radius: 10px;
+    padding: 15px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.envoieco,
+.envoieinscri{
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+    padding: 25px 0;
+}
+.envoieco input,
+.envoieinscri input{
+    font-size:1.2rem;
+    color: white;
+    background-color: #464646;
+    border: none;
+    padding: 5px 10px;
+}
+.checkbox{
+    margin: 10 auto;
+}
+.checkbox div{
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0;
+}
+.checkbox div a{
+    color: black;
+}

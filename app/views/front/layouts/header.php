@@ -1,8 +1,8 @@
 <header class="header">
         <div class="barre-connexion">
             <ul>
-                <li><a href="" class="font-balloo-chettan">Connexion</a></li>
-                <li><a href="" class="font-balloo-chettan">Inscription</a></li>
+                <li><a href="index.php?action=connexion" class="font-balloo-chettan">Connexion</a></li>
+                <li><a href="index.php?action=inscription" class="font-balloo-chettan">Inscription</a></li>
             </ul>
         </div>
 
