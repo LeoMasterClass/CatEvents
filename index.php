@@ -2,6 +2,7 @@
 
 session_start();
 
+
 require_once __DIR__ . '/vendor/autoload.php';
 
 try {
@@ -20,6 +21,10 @@ if(isset($_GET['action'])){
         $controllerFront->boutiqueFront();
     }else if($_GET['action'] == 'diy'){
         $controllerFront->diyFront();
+    }else if($_GET['action'] == 'connexion'){
+        $controllerFront->connexionFront();
+    }else if($_GET['action'] == 'inscription'){
+        $controllerFront->inscriptionFront();
     }
 }else{
     $controllerFront->home();

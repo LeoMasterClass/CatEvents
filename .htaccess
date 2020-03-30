@@ -1,2 +1,2 @@
 RewriteEngine On
-RewriteRule admin /app/views/back/administration.php
+RewriteRule admin views/back/administration.php

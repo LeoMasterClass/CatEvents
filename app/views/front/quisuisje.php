@@ -24,7 +24,7 @@ include_once "app/views/front/layouts/header.php"
                 <p class="font-texte"><span class="strong">Je suis à votre disposition pour tous renseignements.</span></br>
                 <span class="strong">Bonne visite,</span></p>
             </div>
-            <img src="<?= $images[1] ?>" alt="">
+            <img src="<?= $images[1] ?>" alt="<?= $images['alt'] ?>">
             <p class="font-texte">Julia</p>
         </article>
     </section>

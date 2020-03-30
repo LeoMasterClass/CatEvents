@@ -15,8 +15,8 @@
     margin-top: 30px;
 }
 .diy article:hover{
-    top: -10px;
-    left: -10px;
+    top: -5px;
+    left: -5px;
     box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.719);
 }
 .diy article img{
@@ -43,7 +43,7 @@
 .diy h2{
     text-align: center;
     display: flex;
-    
+    height: 25%;
 }
 .diy a{
     text-decoration: none;

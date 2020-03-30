@@ -95,7 +95,90 @@ class ControllerFront
 
         require 'app/views/front/diy.php';
     }
+    function connexionFront()
+    {
+        function connexion(){
+            extract ($_POST);
 
+            $error = 'Ces identifiants ne correspondent pas !'; 
+
+            $email = isset($_GET['email']);
+            $password = isset($_GET['password']);
+            $_SESSION = isset($_SESSION['id']);
+
+            $connexionManager = new \Projet\Models\ConnexionManager();
+            $connexion = $connexionManager->postConnexion($email,$password);
+
+            var_dump($_SESSION['id']);
+
+            if(password_verify($password, $connexion['password'])){
+                $_SESSION['id'] = $connexion['id'];
+                header('Location: app/views/back/compte.php');
+            }else{
+                return $error;
+            }
+            
+        }
+        $connexion = connexion();
+
+        require 'app/views/front/connexion.php';
+    }
+    function inscriptionFront()
+    {
+        function register(){
+
+            extract ($_POST);
+
+            $validation = true;
+            
+            $errors = [];
+        
+            if(empty($firstName) || empty($name) || empty($email) || empty($emailverif) || empty($password) || empty($passwordverif)){
+                $validation = false;
+                $errors[] = "Tous les champs sont obligatoire !" ;
+            }
+            else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                $validation = false;
+                $errors[] = "L'adresse email n'est pas valide !";
+            }
+            else if($emailverif != $email){
+                $validation = false;
+                $errors[] = "L'adresse email de confirmation n'est pas valide !";
+            }
+            else if($passwordverif != $password){
+                $validation = false;
+                $errors[] = "Le mot de passe de confirmation est incorrect !";
+            }
+            // if(pseudo_check($pseudo)){
+            //     $validation = false;
+            //     $errors[] = 'Ce pseudo est déjà pris !';
+            // };
+            else if($validation){
+
+                $firstName = $_POST['firstName'];
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+
+ 
+                $inscriptionManager = new \Projet\Models\InscriptionManager();
+                $inscriptionManager->postRegister($firstName,$name,$email,$password);
+
+                
+                // unset($_POST['firstName']);
+                // unset($_POST['name']);
+                // unset($_POST['email']);
+                // unset($_POST['emailverif']);
+                // unset($_POST['password']);
+                // unset($_POST['passwordverif']);
+
+            }
+            return $errors;
+        }
+        $inscription = register();
+
+        require 'app/views/front/inscription.php';
+    }
     
 
 }

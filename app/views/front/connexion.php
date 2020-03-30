@@ -1,6 +1,6 @@
 <?php
-    include_once "app/views/front/layouts/head.php";
-    include_once "app/views/front/layouts/header.php";
+include_once "app/views/front/layouts/head.php";
+include_once "app/views/front/layouts/header.php";
     if(!empty($_POST)){
         $error = $connexion;
     };
@@ -8,7 +8,6 @@
 
 <main class="container">
     <section class="connexion">
-
     <h1 class="font-titre">Connexion</h1>
 
         <form method="post" action="">
@@ -36,6 +35,7 @@
                 <div class="envoieco">
                     <input class="font-titre" type="submit" value="Se connecter">
                 </div>
+                <?php var_dump($connexion) ?>
 
         </form>
 
