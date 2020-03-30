@@ -4,6 +4,7 @@ namespace Projet\models;
 
 class HomeManager extends Manager
 {
+    // affiches les articles
     public function articlesFront()
     {
         $bdd= $this->dbConnect();
@@ -11,6 +12,7 @@ class HomeManager extends Manager
         $req->execute(array());
         return $req;
     }
+    // affiches les articles a vendres
     public function articlesventesFront()
     {
         $bdd= $this->dbConnect();

@@ -4,7 +4,7 @@ namespace Projet\models;
 
 class ContactManager extends Manager
 {
-
+// envoie les informations rentrer dans le contact en base de donnée
     public function postContact($name,$email,$objet,$content)
     {
         $bdd = $this->dbConnect();

@@ -106,13 +106,15 @@ class ControllerFront
             $password = isset($_GET['password']);
             $_SESSION = isset($_SESSION['id']);
 
+
             $connexionManager = new \Projet\Models\ConnexionManager();
             $connexion = $connexionManager->postConnexion($email,$password);
 
-            var_dump($_SESSION['id']);
 
             if(password_verify($password, $connexion['password'])){
+
                 $_SESSION['id'] = $connexion['id'];
+                $_SESSION['email'] = $email;
                 header('Location: app/views/back/compte.php');
             }else{
                 return $error;

@@ -4,6 +4,7 @@ namespace Projet\models;
 
 class InspirationManager extends Manager
 {
+    // affiches les images de la table inspirations
     public function PostInspiFront()
     {
         $bdd= $this->dbConnect();

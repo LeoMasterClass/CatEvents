@@ -4,6 +4,7 @@ namespace Projet\models;
 
 class InscriptionManager extends Manager
 {
+    // envoie les données d'inscription en base de donnée 
     public function postRegister($firstName,$name,$email,$password)
     {
 

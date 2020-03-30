@@ -4,6 +4,7 @@ namespace Projet\models;
 
 class QuisuisjeManager extends Manager
 {
+    // affiches les images de la table images
     public function imagesFront()
     {
         $bdd= $this->dbConnect();
