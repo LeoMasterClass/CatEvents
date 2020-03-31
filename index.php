@@ -7,7 +7,6 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 try {
 $controllerFront = new \Projet\controllers\ControllerFront();
-$controllerBack = new \Projet\controllers\ControllerBack();
 if(isset($_GET['action'])){
     if($_GET['action'] == 'contact'){
         $controllerFront->contactFront();
@@ -25,6 +24,8 @@ if(isset($_GET['action'])){
         $controllerFront->connexionFront();
     }else if($_GET['action'] == 'inscription'){
         $controllerFront->inscriptionFront();
+    }else if($_GET['action'] == 'compte'){
+        $controllerFront->compteFront();
     }
 }else{
     $controllerFront->home();

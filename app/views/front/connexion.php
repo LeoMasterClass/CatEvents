@@ -35,7 +35,7 @@ include_once "app/views/front/layouts/header.php";
                 <div class="envoieco">
                     <input class="font-titre" type="submit" value="Se connecter">
                 </div>
-                <?php var_dump($connexion) ?>
+
 
         </form>
 

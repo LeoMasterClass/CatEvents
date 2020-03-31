@@ -13,7 +13,7 @@ class ControllerFront
 
         require 'app/views/front/home.php';
     }
-    public function contactFront(){
+    function contactFront(){
 
         function contact(){
 
@@ -102,23 +102,31 @@ class ControllerFront
 
             $error = 'Ces identifiants ne correspondent pas !'; 
 
-            $email = isset($_GET['email']);
-            $password = isset($_GET['password']);
-            $_SESSION = isset($_SESSION['id']);
+            $email = htmlspecialchars($_POST['email']);
+            $password = htmlspecialchars($_POST['password']);
+
+
 
 
             $connexionManager = new \Projet\Models\ConnexionManager();
             $connexion = $connexionManager->postConnexion($email,$password);
+            $resultat = $connexion->fetch();
+            $isPasswordCorrect = password_verify($password, $resultat['password']);
 
+            var_dump($_POST['email']);
+            var_dump($_POST['password']);
+            if ($isPasswordCorrect) {
+                $_SESSION['email'] = $resultat['email']; // transformation des variables recupérées en session
+                $_SESSION['password'] = $resultat['password'];
+                $_SESSION['id'] = $resultat['id'];
 
-            if(password_verify($password, $connexion['password'])){
-
-                $_SESSION['id'] = $connexion['id'];
-                $_SESSION['email'] = $email;
-                header('Location: app/views/back/compte.php');
-            }else{
-                return $error;
+                header('Location: index.php?action=compte');
+            } else {
+                 echo 'vos identifients sont incorrect';
+                 //require('views/backend/erreur.php');
             }
+
+
             
         }
         $connexion = connexion();
@@ -181,6 +189,9 @@ class ControllerFront
 
         require 'app/views/front/inscription.php';
     }
-    
+    function compteFront(){
+
+        require 'app/views/front/compte.php';
+    }
 
 }

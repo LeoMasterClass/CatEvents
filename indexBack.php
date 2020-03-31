@@ -1,17 +1,17 @@
 <?php
 
-// session_start();
+session_start();
 
-// require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
-// try {
-// $controllerBack = new \Projet\controllers\ControllerBack();
-// if(isset($_GET['action'])){
+try {
+$controllerBack = new \Projet\controllers\ControllerBack();
+if(isset($_GET['action'])){
     
-// }else{
-//     $controllerFront->adminBack();
-// }
+}else{
+    $controllerBack->loginBack();
+}
 
-// }catch(Exception $e){
+}catch(Exception $e){
     
-// } 
+} 
