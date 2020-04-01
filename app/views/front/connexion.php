@@ -17,7 +17,7 @@ include_once "app/views/front/layouts/header.php";
         ?>
 
                 <div class="">
-                    <div class="message-erreur"><?= $error ?></div>
+                    <div class="message-erreur">Vos identifiants sont mauvais</div>
                 </div>
 
         <?php 

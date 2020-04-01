@@ -26,6 +26,8 @@ if(isset($_GET['action'])){
         $controllerFront->inscriptionFront();
     }else if($_GET['action'] == 'compte'){
         $controllerFront->compteFront();
+    }else if($_GET['action'] == 'article'){
+        $controllerFront->articlesFront();
     }
 }else{
     $controllerFront->home();

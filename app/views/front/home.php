@@ -29,7 +29,7 @@
             <img src="<?= $article['image'] ?>" alt="">
             <h2 class="font-texte"><?= $article['title'] ?></h2>
             <p class="font-texte"><?= $article['extract'] ?></p>
-            <a href="" class="font-texte">Lire la suite</a>
+            <a href="index.php?id=<?= $articlesid['id'] ?>" class="font-texte">Lire la suite</a>
         </article>
     <?php endwhile ?>
     </section>

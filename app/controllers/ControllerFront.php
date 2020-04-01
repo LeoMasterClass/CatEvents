@@ -11,13 +11,25 @@ class ControllerFront
         $articles = $homeFront->articlesFront();
         $articlesventes = $homeFront->articlesventesFront();
 
+        function article(){
+            $id = $_GET['id'];
+
+            $articlesManager = new \Projet\Models\ArticlesManager();
+            $idArticles = $articlesManager->articles();
+            $idArticles->fetch();
+            if(empty($idArticles)){
+                header('Location: app/views/front/home.php');
+            }else{
+                return $article;
+            }
+        }
+        $articlesid = $idArticles;
+
         require 'app/views/front/home.php';
     }
     function contactFront(){
 
         function contact(){
-
-
             extract($_POST);
         
             $validation = true;
@@ -100,21 +112,17 @@ class ControllerFront
         function connexion(){
             extract ($_POST);
 
-            $error = 'Ces identifiants ne correspondent pas !'; 
+            $errors = []; 
 
+            
             $email = htmlspecialchars($_POST['email']);
             $password = htmlspecialchars($_POST['password']);
-
-
-
 
             $connexionManager = new \Projet\Models\ConnexionManager();
             $connexion = $connexionManager->postConnexion($email,$password);
             $resultat = $connexion->fetch();
             $isPasswordCorrect = password_verify($password, $resultat['password']);
 
-            var_dump($_POST['email']);
-            var_dump($_POST['password']);
             if ($isPasswordCorrect) {
                 $_SESSION['email'] = $resultat['email']; // transformation des variables recupérées en session
                 $_SESSION['password'] = $resultat['password'];
@@ -122,12 +130,8 @@ class ControllerFront
 
                 header('Location: index.php?action=compte');
             } else {
-                 echo 'vos identifients sont incorrect';
-                 //require('views/backend/erreur.php');
+                 return $errors;
             }
-
-
-            
         }
         $connexion = connexion();
 
@@ -136,7 +140,6 @@ class ControllerFront
     function inscriptionFront()
     {
         function register(){
-
             extract ($_POST);
 
             $validation = true;
@@ -192,6 +195,9 @@ class ControllerFront
     function compteFront(){
 
         require 'app/views/front/compte.php';
+    }
+    function articlesFront(){
+
     }
 
 }
