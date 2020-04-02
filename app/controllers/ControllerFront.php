@@ -11,19 +11,32 @@ class ControllerFront
         $articles = $homeFront->articlesFront();
         $articlesventes = $homeFront->articlesventesFront();
 
-        function article(){
-            $id = $_GET['id'];
+        function ouverturearticle($id){
 
-            $articlesManager = new \Projet\Models\ArticlesManager();
-            $idArticles = $articlesManager->articles();
-            $idArticles->fetch();
-            if(empty($idArticles)){
-                header('Location: app/views/front/home.php');
-            }else{
-                return $article;
-            }
+        $id = $_GET['id'];
+
+        $articles->fetch();
+        if(empty($articles)){
+            header('Location: app/views/front/home.php');
+        }else{
+            return $articles;
         }
-        $articlesid = $idArticles;
+        }
+
+
+        // function article(){
+        //     $id = $_GET['id'];
+
+        //     $articlesManager = new \Projet\Models\ArticlesManager();
+        //     $idArticles = $articlesManager->articles();
+        //     $idArticles->fetch();
+        //     if(empty($idArticles)){
+        //         header('Location: app/views/front/home.php');
+        //     }else{
+        //         return $idArticles;
+        //     }
+        // }
+        // $articlesid = $idArticles;
 
         require 'app/views/front/home.php';
     }
@@ -109,7 +122,7 @@ class ControllerFront
     }
     function connexionFront()
     {
-        function connexion(){
+        function connexion($email,$password){
             extract ($_POST);
 
             $errors = []; 
@@ -133,7 +146,7 @@ class ControllerFront
                  return $errors;
             }
         }
-        $connexion = connexion();
+        $connexion = connexion($email,$password);
 
         require 'app/views/front/connexion.php';
     }
@@ -198,6 +211,21 @@ class ControllerFront
     }
     function articlesFront(){
 
+        function article($id){
+            $id = $_GET['id'];
+            $article = new \Projet\Models\ArticlesManager();
+            $articles = $article->article();
+            $articles->fetch();
+            var_dump($id);
+            if(empty($articles)){
+                header('Location: app/views/front/home.php');
+            }else{
+                return $articles;
+            }
+        }
+        $articles = article($id);
+
+        require 'app/views/front/article.php';
     }
 
 }
