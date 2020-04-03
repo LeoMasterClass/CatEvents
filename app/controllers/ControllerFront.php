@@ -11,17 +11,17 @@ class ControllerFront
         $articles = $homeFront->articlesFront();
         $articlesventes = $homeFront->articlesventesFront();
 
-        function ouverturearticle($id){
+        // function ouverturearticle($id){
 
-        $id = $_GET['id'];
+        // $id = $_GET['id'];
 
-        $articles->fetch();
-        if(empty($articles)){
-            header('Location: app/views/front/home.php');
-        }else{
-            return $articles;
-        }
-        }
+        // $articles->fetch();
+        // if(empty($articles)){
+        //     header('Location: app/views/front/home.php');
+        // }else{
+        //     return $articles;
+        // }
+        
 
 
         // function article(){
@@ -211,19 +211,20 @@ class ControllerFront
     }
     function articlesFront(){
 
-        function article($id){
+
+        function articles(){
+
             $id = $_GET['id'];
             $article = new \Projet\Models\ArticlesManager();
-            $articles = $article->article();
-            $articles->fetch();
-            var_dump($id);
+            $articles = $article->article($id);
+
             if(empty($articles)){
                 header('Location: app/views/front/home.php');
             }else{
                 return $articles;
             }
         }
-        $articles = article($id);
+        $articles = articles();
 
         require 'app/views/front/article.php';
     }

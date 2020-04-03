@@ -9,7 +9,7 @@ class HomeManager extends Manager
     {
         $bdd= $this->dbConnect();
         $req= $bdd->prepare('SELECT id, title, extract, image FROM articles ORDER BY id DESC LIMIT 4');
-        $req->execute([$id]);
+        $req->execute();
         return $req;
     }
     // affiches les articles a vendres
