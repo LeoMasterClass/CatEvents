@@ -122,12 +122,14 @@ class ControllerFront
     }
     function connexionFront()
     {
-        function connexion($email,$password){
+        function connexion(){
             extract ($_POST);
 
             $errors = []; 
 
-            
+            !empty($email);
+            !empty($password);
+
             $email = htmlspecialchars($_POST['email']);
             $password = htmlspecialchars($_POST['password']);
 
@@ -135,6 +137,7 @@ class ControllerFront
             $connexion = $connexionManager->postConnexion($email,$password);
             $resultat = $connexion->fetch();
             $isPasswordCorrect = password_verify($password, $resultat['password']);
+
 
             if ($isPasswordCorrect) {
                 $_SESSION['email'] = $resultat['email']; // transformation des variables recupérées en session
@@ -146,7 +149,7 @@ class ControllerFront
                  return $errors;
             }
         }
-        $connexion = connexion($email,$password);
+        $connexion = connexion();
 
         require 'app/views/front/connexion.php';
     }
@@ -207,6 +210,16 @@ class ControllerFront
     }
     function compteFront(){
 
+        function viewInfo(){
+            $compte = new \Projet\Models\CompteUtilisateurManager();
+            $compte = $compte->infosUsers($id);
+            
+            if($_SESSION['id'] == $compte['id']){
+                return $compte;
+            }
+        }
+        $compte = viewInfo();
+
         require 'app/views/front/compte.php';
     }
     function articlesFront(){
@@ -228,5 +241,6 @@ class ControllerFront
 
         require 'app/views/front/article.php';
     }
+    
 
 }
