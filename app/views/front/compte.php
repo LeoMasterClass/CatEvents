@@ -4,9 +4,14 @@
 ?>
 <main class="container">
 
-    <p><?= $_SESSION['id'] ?></p>
-    <p><?= $compte['email'] ?></p>
+<?= 
+$_SESSION['id'];
+?>
 
+<?php while($info = $compte->fetch()) : ?>
+<?= var_dump($info); ?>
+    <h1><?= $info['name'] ?></h1>
+<?php endwhile ?>
 
 </main>
 <?php

@@ -162,7 +162,7 @@ class ControllerFront
             
             $errors = [];
         
-            if(empty($firstName) || empty($name) || empty($email) || empty($emailverif) || empty($password) || empty($passwordverif)){
+            if(empty($firstName) || empty($name) || empty($email) || empty($emailverif) || empty($passwordR) || empty($passwordverif)){
                 $validation = false;
                 $errors[] = "Tous les champs sont obligatoire !" ;
             }
@@ -174,7 +174,7 @@ class ControllerFront
                 $validation = false;
                 $errors[] = "L'adresse email de confirmation n'est pas valide !";
             }
-            else if($passwordverif != $password){
+            else if($passwordverif != $passwordR){
                 $validation = false;
                 $errors[] = "Le mot de passe de confirmation est incorrect !";
             }
@@ -187,11 +187,11 @@ class ControllerFront
                 $firstName = $_POST['firstName'];
                 $name = $_POST['name'];
                 $email = $_POST['email'];
-                $password = $_POST['password'];
+                $passwordR = $_POST['passwordR'];
 
  
                 $inscriptionManager = new \Projet\Models\InscriptionManager();
-                $inscriptionManager->postRegister($firstName,$name,$email,$password);
+                $inscriptionManager->postRegister($firstName,$name,$email,$passwordR);
 
                 
                 // unset($_POST['firstName']);
@@ -212,11 +212,8 @@ class ControllerFront
 
         function viewInfo(){
             $compte = new \Projet\Models\CompteUtilisateurManager();
-            $compte = $compte->infosUsers($id);
-            
-            if($_SESSION['id'] == $compte['id']){
-                return $compte;
-            }
+            $compte = $compte->infosUser();
+            var_dump($compte);
         }
         $compte = viewInfo();
 
