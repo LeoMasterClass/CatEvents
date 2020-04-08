@@ -7,7 +7,7 @@ class CompteUtilisateurManager extends Manager
 // gere les infos rentrer par l'utilisateur
     public function infosUser(){
         $bdd = $this->dbConnect();
-        $compte = $bdd->prepare("SELECT * FROM users WHERE id = '".$_SESSION['id']."'");
+        $compte = $bdd->prepare("SELECT * FROM users WHERE email = '".$_SESSION['email']."'");
         $compte->execute(array());
         var_dump($compte);
         return $compte;

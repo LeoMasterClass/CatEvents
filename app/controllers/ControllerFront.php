@@ -120,18 +120,17 @@ class ControllerFront
 
         require 'app/views/front/diy.php';
     }
-    function connexionFront()
+    public function connexionFront()
     {
         function connexion(){
             extract ($_POST);
 
             $errors = []; 
-
-            !empty($email);
-            !empty($password);
-
+            
             $email = htmlspecialchars($_POST['email']);
             $password = htmlspecialchars($_POST['password']);
+            var_dump($email);
+            var_dump($password);
 
             $connexionManager = new \Projet\Models\ConnexionManager();
             $connexion = $connexionManager->postConnexion($email,$password);
@@ -160,9 +159,13 @@ class ControllerFront
 
             $validation = true;
             
+            var_dump($firstName);
+            var_dump($name);
+            var_dump($email);
+            var_dump($password);
+            var_dump($passwordverif);
             $errors = [];
-        
-            if(empty($firstName) || empty($name) || empty($email) || empty($emailverif) || empty($passwordR) || empty($passwordverif)){
+            if(empty($firstName) || empty($name) || empty($email) || empty($emailverif) || empty($password) || empty($passwordverif)){
                 $validation = false;
                 $errors[] = "Tous les champs sont obligatoire !" ;
             }
@@ -174,10 +177,11 @@ class ControllerFront
                 $validation = false;
                 $errors[] = "L'adresse email de confirmation n'est pas valide !";
             }
-            else if($passwordverif != $passwordR){
+            else if($passwordverif != $password){
                 $validation = false;
                 $errors[] = "Le mot de passe de confirmation est incorrect !";
-            }
+            }   
+
             // if(pseudo_check($pseudo)){
             //     $validation = false;
             //     $errors[] = 'Ce pseudo est déjà pris !';
@@ -187,11 +191,12 @@ class ControllerFront
                 $firstName = $_POST['firstName'];
                 $name = $_POST['name'];
                 $email = $_POST['email'];
-                $passwordR = $_POST['passwordR'];
+                $passwordR = $_POST['password'];
+
 
  
                 $inscriptionManager = new \Projet\Models\InscriptionManager();
-                $inscriptionManager->postRegister($firstName,$name,$email,$passwordR);
+                $inscriptionManager->postRegister($firstName,$name,$email,$password);
 
                 
                 // unset($_POST['firstName']);
@@ -210,12 +215,13 @@ class ControllerFront
     }
     function compteFront(){
 
-        function viewInfo(){
+        function viewInfo($infos){
             $compte = new \Projet\Models\CompteUtilisateurManager();
-            $compte = $compte->infosUser();
-            var_dump($compte);
+            $infos = $compte->infosUser($email);
+            $infos->fetch();
+            var_dump($infos);
         }
-        $compte = viewInfo();
+        $compte = viewInfo($infos);
 
         require 'app/views/front/compte.php';
     }

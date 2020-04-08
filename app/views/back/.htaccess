@@ -1,4 +1,0 @@
-Authname "Espace administration"
-Authtype Basic
-AuthUserFile "C:\laragon\www\CatEventsMVC.test\app\views\back\.htpasswd"
-Require valid-user

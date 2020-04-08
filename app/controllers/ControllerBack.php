@@ -9,12 +9,13 @@ class ControllerBack
     {
 
 
-        require 'app/views/back/administration.php';
+        require 'app/views/back/admin.php';
     }
     
 
-    function compteBack(){
+    function loginAdmin(){
 
+        require 'app/views/back/loginAdmin.php';
     }
 
 }

@@ -11,6 +11,8 @@ class ConnexionManager extends Manager
         $bdd = $this->dbConnect();
         $req = $bdd ->prepare('SELECT id, email, password FROM users WHERE email = ?');
         $req->execute(array($email));
+        var_dump($email);
+        var_dump($password);
         return $req;
 
     }

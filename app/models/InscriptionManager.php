@@ -5,16 +5,15 @@ namespace Projet\models;
 class InscriptionManager extends Manager
 {
     // envoie les données d'inscription en base de donnée 
-    public function postRegister($firstName,$name,$email,$passwordR)
+    public function postRegister($firstName,$name,$email,$password)
     {
-
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare("INSERT INTO users ( firstName, name, email, password) VALUES ( :firstName, :name, :email, :passwordR)");
+        $req = $bdd->prepare("INSERT INTO users ( firstName, name, email, password) VALUES ( :firstName, :name, :email, :password)");
         $req->execute([
             "firstName" => htmlentities($firstName),
             "name" => htmlentities($name),
             "email" => htmlentities($email),
-            "passwordR" => password_hash($passwordR, PASSWORD_DEFAULT)
+            "password" => password_hash($password, PASSWORD_DEFAULT)
         ]);
         return $req;
 
