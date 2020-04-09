@@ -215,13 +215,13 @@ class ControllerFront
     }
     function compteFront(){
 
-        function viewInfo($infos){
+        function viewInfo(){
             $compte = new \Projet\Models\CompteUtilisateurManager();
             $infos = $compte->infosUser($email);
             $infos->fetch();
             var_dump($infos);
         }
-        $compte = viewInfo($infos);
+        $compte = viewInfo();
 
         require 'app/views/front/compte.php';
     }

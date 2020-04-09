@@ -1,10 +1,46 @@
 footer{
     background-color: white;
     margin-top:10px;
-    padding: 15px 0;
+    padding: 0px 0;
 }
 
 footer p{
     display: flex;
     justify-content: center;
+    background-color: rgb(243,222,203);
+}
+.info{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin: 0 auto;
+
+}
+.casefooter{
+    border-right: 1px solid black;
+    width: 20%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 20px 0;
+}
+.casefooter:last-child{
+    border: none;
+}
+.casefooter li{
+    text-align: start;
+}
+.casefooter li a{
+    text-decoration: none;
+    color: black;
+}
+.info ul{
+    list-style-type: none;
+}
+.info .reseaux ul li{
+    display: flex;
+    flex-direction: row;
+}
+.info .reseaux img{
+    width: 25px;
 }
