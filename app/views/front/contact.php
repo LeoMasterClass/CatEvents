@@ -61,7 +61,7 @@ if(!empty($_POST)){
         </form>
 
         </section>
-        <aside class="asideI"><h2>Instagram</h2></aside>
+        <?php include_once 'app/views/front/layouts/aside.php' ?>
 
     </div>
 

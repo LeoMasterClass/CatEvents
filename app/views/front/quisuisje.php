@@ -28,7 +28,7 @@ include_once "app/views/front/layouts/header.php"
             <p class="font-texte">Julia</p>
         </article>
     </section>
-    <aside class="asideI"><h2>Instagram</h2></aside>
+    <?php include_once 'app/views/front/layouts/aside.php' ?>
     </div>
 </main>
 

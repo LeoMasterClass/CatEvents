@@ -43,7 +43,10 @@
 .diy h2{
     text-align: center;
     display: flex;
-    height: 25%;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: black;
 }
 .diy a{
     text-decoration: none;
