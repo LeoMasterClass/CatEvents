@@ -25,7 +25,7 @@
     </div>
     <div class="casefooter">
         <ul class="font-titre">Informations
-            <li class="font-titre">Catevents</li>
+            <li class="font-titre">Julia Lorin - CatEvents</li>
             <li class="font-titre">2 résidence Montaigne</li>
             <li class="font-titre">56000 Vannes</li>
             <li class="font-titre">France</li>
