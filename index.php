@@ -8,6 +8,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 try {
 $controllerFront = new \Projet\controllers\ControllerFront();
 if(isset($_GET['action'])){
+    // amene a la page lié a l'action demander
     if($_GET['action'] == 'contact'){
         $controllerFront->contactFront();
     }else if($_GET['action'] == 'concept'){
@@ -30,6 +31,7 @@ if(isset($_GET['action'])){
         $controllerFront->articlesFront();
     }
 }else{
+    // Par défaut amene sur la page home.php
     $controllerFront->home();
 }
 

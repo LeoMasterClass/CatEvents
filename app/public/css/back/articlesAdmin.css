@@ -1,0 +1,33 @@
+.article-panel{
+    width: 80%;
+    margin: 0 auto;
+}
+
+table{
+    margin: 30px auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.titre-table{
+    color: black;
+    font-size: 1.3rem;
+}
+.text-align{
+    text-align: center;
+}
+table tr td{
+    color: white;
+    margin: 0;
+    padding: 5px 5px;
+    font-size: 1rem;
+    border: 1px solid black;
+}
+table tr td a{
+    text-decoration: none;
+    color: white;
+}
+.icon-panel{
+    display: flex;
+    justify-content: center;
+    color: white;
+}

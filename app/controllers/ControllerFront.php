@@ -10,33 +10,7 @@ class ControllerFront
         $homeFront= new \Projet\Models\HomeManager();
         $articles = $homeFront->articlesFront();
         $articlesventes = $homeFront->articlesventesFront();
-
-        // function ouverturearticle($id){
-
-        // $id = $_GET['id'];
-
-        // $articles->fetch();
-        // if(empty($articles)){
-        //     header('Location: app/views/front/home.php');
-        // }else{
-        //     return $articles;
-        // }
-        
-
-
-        // function article(){
-        //     $id = $_GET['id'];
-
-        //     $articlesManager = new \Projet\Models\ArticlesManager();
-        //     $idArticles = $articlesManager->articles();
-        //     $idArticles->fetch();
-        //     if(empty($idArticles)){
-        //         header('Location: app/views/front/home.php');
-        //     }else{
-        //         return $idArticles;
-        //     }
-        // }
-        // $articlesid = $idArticles;
+        var_dump($articles);
 
         require 'app/views/front/home.php';
     }
@@ -63,7 +37,7 @@ class ControllerFront
         
 
             else if($validation){
-                $to = "gaylor273@outlook.fr";
+                $to = "leolorin9@gmail.com";
                 $sujet = 'nouveau message de ' . $nom;
                 $message = '
                 <h1>Nouveau message de ' . $nom .'</h1>
@@ -244,6 +218,12 @@ class ControllerFront
 
         require 'app/views/front/article.php';
     }
-    
+    function isConnect(){
+        if($_SESSION["email"] == true){
+            $deconnection = "Déconnection";
+            $compte = "Mon compte";
+            
+        }
+    }
 
 }

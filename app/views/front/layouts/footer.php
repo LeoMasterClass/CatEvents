@@ -1,3 +1,4 @@
+<!-- footer -->
 <footer>
     <aside class="info">
     <div class="casefooter">
@@ -20,7 +21,7 @@
             <li class="font-titre"><a href="">-Mentions légales</a></li>
             <li class="font-titre"><a href="">-CGV</a></li>
             <li class="font-titre"><a href="">-Politique de confidentialité</a></li>
-            <li class="font-titre"><a href="">-Me contacter en ligne</a></li>
+            <li class="font-titre"><a href="index.php?action=contact">-Me contacter en ligne</a></li>
         </ul>
     </div>
     <div class="casefooter">
@@ -41,5 +42,5 @@
         </ul>
     </div>
     </aside>
-    <p>&copy CatEvents 2020</p>
+    <p class="font-titre">&copy CatEvents 2020</p>
 </footer>

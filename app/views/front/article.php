@@ -3,14 +3,24 @@ include_once "app/views/front/layouts/head.php";
 include_once "app/views/front/layouts/header.php";
 
 ?>
+
+<main class="container">
+
+<article class="articles">
+
     <?php while($article = $articles->fetch()) : ?>
 
-    <h1><?= $article['id'] ?></h1>
     <img src="<?= $article['image'] ?>" alt="">
-    <h2><?= $article['title'] ?></h2>
-    <p><?= $article['content'] ?></p>
+
+    <h2 class="font-texte"><?= $article['title'] ?></h2>
+
+    <p class="font-texte"><?= $article['content'] ?></p>
+
     <?php endwhile ?>
 
+</article>
+
+</main>
 
 <?php
 include_once "app/views/front/layouts/footer.php"

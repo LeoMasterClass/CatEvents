@@ -5,8 +5,8 @@ include_once "app/views/front/layouts/header.php"
 
 
 <main class="container">
-<h2>Boutique</h2>
-<?php echo realpath('app/views/back/.htpasswd') ?>
+<h2>A venir</h2>
+
 </main>
 
 

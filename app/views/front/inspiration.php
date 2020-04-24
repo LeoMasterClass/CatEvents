@@ -11,7 +11,7 @@ include_once "app/views/front/layouts/header.php"
         <article>
             <?php while($postimage = $postimages->fetch()) : ?>
 
-            <img src="<?= $postimage['image'] ?>" alt="">
+            <img src="<?= $postimage['image'] ?>" alt="<?= $postimage['alt'] ?>">
 
             <?php endwhile ?>
         </article>

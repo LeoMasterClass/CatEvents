@@ -5,6 +5,7 @@
     <title>CatEvents</title>
     <link rel="stylesheet" href="app/public/css/header.css">    
     <link rel="stylesheet" href="app/public/css/connexion.css">
+    <link rel="stylesheet" href="app/public/css/article.css">
     <link rel="stylesheet" href="app/public/css/main_home.css">
     <link rel="stylesheet" href="app/public/css/main_concept.css">
     <link rel="stylesheet" href="app/public/css/main_quisuisje.css">    

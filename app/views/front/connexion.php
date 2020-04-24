@@ -7,7 +7,9 @@ include_once "app/views/front/layouts/header.php";
 ?>
 
 <main class="container">
+
     <section class="connexion">
+
     <h1 class="font-titre">Connexion</h1>
 
         <form method="post" action="">
@@ -40,7 +42,9 @@ include_once "app/views/front/layouts/header.php";
         </form>
 
 </section>
+
 </main>
+
 <?php
 include_once 'app/views/front/layouts/footer.php'
 ?>

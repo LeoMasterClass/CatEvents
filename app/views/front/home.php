@@ -12,7 +12,7 @@
     <!-- partie article en vente -->
     <section class="article">
     <?php while($articlevente = $articlesventes->fetch()) : ?> 
-        <article class="articlevente"><img src="<?= $articlevente['image'] ?>" alt=""><a href="" class="lienarticle font-texte" class="font-balloo-chettan"><?= $articlevente['title'] ?></a></article>
+        <article class="articlevente"><img src="<?= $articlevente['image'] ?>" alt="<?= $articlevente['alt'] ?>"><a href="" class="lienarticle font-texte" class="font-balloo-chettan"><?= $articlevente['title'] ?></a></article>
         <?php endwhile ?>
     </section>
     <!-- partie article -->
@@ -26,7 +26,7 @@
     <?php
     while($article = $articles->fetch()) : ?> 
         <article class="article-i">
-            <img src="<?= $article['image'] ?>" alt="">
+            <img src="<?= $article['image'] ?>" alt="<?= $article['alt'] ?>">
             <h2 class="font-texte"><?= $article['title'] ?></h2>
             <p class="font-texte"><?= $article['extract'] ?></p>
             <a href="index.php?action=article&id=<?= $article['id'] ?>" class="font-texte">Lire la suite</a>

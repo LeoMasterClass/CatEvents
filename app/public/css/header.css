@@ -22,6 +22,7 @@ body{
 .barre-connexion ul{
     justify-content: flex-end;
     max-width: 1160px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -58,6 +59,7 @@ body{
     justify-content: center;
     margin: 0 auto;
     max-width: 1160px;
+    width: 100%;
 }
 .barre-navigation ul a{
     font-size: 1.2rem;
@@ -90,3 +92,39 @@ body{
 }
 /* fin modif */
 /* fin */
+
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+    .barre-navigation ul{
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 1160px;
+        width: 100%;
+    }
+    .barre-navigation ul a{
+        font-size: 1.2rem;
+        margin: 0 5px;
+        border-bottom: 2px solid white;
+        background-color: rgb(161, 121, 85);
+        border-radius: 20px 20px 0 0;
+        -webkit-border-radius: 20px 20px 0 0;
+        -moz-border-radius: 20px 20px 0 0;
+        -ms-border-radius: 20px 20px 0 0;
+        -o-border-radius: 20px 20px 0 0;
+        text-align: center;
+    }
+    .barre-navigation ul a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+    .barre-navigation ul a:nth-child(2n){ 
+        font-size: 1.3rem;
+        margin: 0 5px;
+        border-bottom: 2px solid white;
+        background-color: rgb(72, 55, 38);
+        border-radius: 20px 20px 0 0;
+        -webkit-border-radius: 20px 20px 0 0;
+        -moz-border-radius: 20px 20px 0 0;
+        -ms-border-radius: 20px 20px 0 0;
+        -o-border-radius: 20px 20px 0 0;
+    }
+}

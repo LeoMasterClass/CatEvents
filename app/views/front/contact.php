@@ -8,10 +8,13 @@ if(!empty($_POST)){
 ?>
 
 <main class="container">
+
     <div class="part2">
 
     <section class="contact">
+
     <form method="post" action="">
+    
         <?php
             if(isset($errors)) :
             if($errors) :

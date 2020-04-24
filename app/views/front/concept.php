@@ -4,9 +4,13 @@ include_once "app/views/front/layouts/header.php"
 ?>
 
 <main class="container">
+
     <div class="part2">
+
     <section class="concept">
+
     <h1 class="font-titre">Le concept</h2>
+
     <div class="contenu_concept">
         <p class="font-texte">Je suis une <span class="strong">créatrice de fêtes</span></p>
 
@@ -53,9 +57,13 @@ include_once "app/views/front/layouts/header.php"
         <p class="font-texte">Julia</p>
 
     </div>
+
     </section>
+
     <?php include_once 'app/views/front/layouts/aside.php' ?>
+
     </div>
+    
 </main>
 
 <?php

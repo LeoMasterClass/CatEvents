@@ -5,12 +5,7 @@
 ?>
 <main class="container">
 
-<?= 
-$_SESSION['email'];
-?>
-<?php while($info = $infos) : ?>
-    <?= var_dump($info['name']) ?>
-    <?= $info['name'] ?>
+
 
 <?php endwhile ?>
 </main>

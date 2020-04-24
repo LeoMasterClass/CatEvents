@@ -1,4 +1,6 @@
+<!-- Header -->
 <header class="header">
+    <!-- Barre de connexion pour le compte utilisateur -->
         <div class="barre-connexion">
             <ul>
                 <li><a href="index.php?action=connexion" class="font-balloo-chettan">Connexion</a></li>
@@ -6,8 +8,10 @@
             </ul>
         </div>
 
-        <a class="bandeau-header" href="/"><img src="app/public/img/image/Bandeaulogo.png" alt=""></a>
+    <!-- Logo du site -->
+        <a class="bandeau-header" href="/"><img src="app/public/img/image/Bandeaulogo.png" alt="Logo CatEvents"></a>
 
+    <!-- barre de navigation du site -->
         <nav class="barre-navigation">
             <ul>
                 <a href="/" class="font-nav"><li>Accueil</li></a>
