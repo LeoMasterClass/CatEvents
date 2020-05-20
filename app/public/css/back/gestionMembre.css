@@ -1,0 +1,9 @@
+/* css lié a la page de gestion de membre */
+.icon_updown_admin{
+    display: flex;
+    flex-direction: row;
+}
+
+.icon_updown_admin a{
+    width: 50%;
+}

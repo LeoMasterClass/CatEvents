@@ -1,4 +1,4 @@
-
+/* css lié a la page contact*/
 .contact{
     max-width: 773px;
     width: 100%;
@@ -30,6 +30,8 @@
     border: 1px solid #e8e8e8;
     width: 773px;
     height: 250px;
+    padding: 13px;
+
 }
 
 .message-confirmation{

@@ -36,6 +36,8 @@
               
         ?>
 
+            <p class="info_inscription font-texte">L'inscription vous servira pour passer vos commandes dans la futur boutique du site mais aussi y retrouver toutes vos informations lié a votre compte</p>
+
             <div class="input-inscription">
                     <label for="firstName" class="font-titre">Nom</label>
                     <input type="text" name="firstName" placeholder="" value="<?php if(isset($_POST['firstName']))echo $_POST['firstName'] ?>">

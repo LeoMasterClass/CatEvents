@@ -1,3 +1,11 @@
+/* Margin et padding par defaut */
+
+*{
+    margin: 0 0;
+    padding: 0 0; 
+}
+
+/* différente font utiliser */
 .font-texte{
 
     font-family: 'Bellota', cursive; 

@@ -5,7 +5,17 @@ include_once "app/views/front/layouts/header.php"
 
 
 <main class="container">
-<h2>A venir</h2>
+
+<section class="boutique">
+
+    <img src="app/public/img/image/Logo_Catevents_chantier2.png" alt="">
+
+    <h2 class="font-titre">A venir</h2>
+
+    <p><a href="/">Retour a l'accueil..</a></p>
+
+</section>
+
 
 </main>
 

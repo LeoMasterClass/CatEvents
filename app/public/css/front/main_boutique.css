@@ -1,0 +1,19 @@
+/* css lié a la page boutique*/
+.boutique{
+    max-width: 900px;
+    margin: 30px auto;
+    text-align: center;
+    
+}
+.boutique img{
+    width: 500px;
+    margin: 20px 0;
+}
+.boutique h2{
+    font-size: 1.8rem;
+    margin: 10px 0;
+}
+.boutique a{
+    color: black;
+    font-size: 1.3rem;
+}

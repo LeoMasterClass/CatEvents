@@ -15,15 +15,57 @@ class ControllerBack
 
     function loginAdmin(){
 
+        function connexionAdmin(){
+            extract ($_POST);
+
+            $errors = []; 
+            
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+
+
+            $connexionManager = new \Projet\Models\ConnexionAdminManager();
+            $connexion = $connexionManager->adminConnexion($email,$password,$admin);
+            $resultat = $connexion->fetch();
+
+            $isPasswordCorrect = password_verify($password, $resultat['password']);
+
+
+            if ($isPasswordCorrect) {
+                $_SESSION['email'] = $resultat['email']; // transformation des variables recupérées en session
+                $_SESSION['password'] = $resultat['password'];
+                $_SESSION['id'] = $resultat['id'];
+                $_SESSION['admin'] = $resultat['admin'];
+                if ($_SESSION['admin'] == 1) {
+                    header('Location: indexBack.php?action=admin');
+                }else{
+                    header('Location: /');
+                }
+            } else {
+                 return $errors;
+            }
+        }
+        $connexion = connexionAdmin();
+
         require 'app/views/back/loginAdmin.php';
     }
+
+
+
+//**
+// 
+//          GESTION DE LA PARTIE ARTICLES
+// 
+//**
+
+
 
     function articlesAdmin(){
         // Va permettre de voir tout les articles de la table articles
         function showArticle(){
             $showArticleManage= new \Projet\Models\ArticlesAdminManager();
             $showTables = $showArticleManage->showArticleManage();
-            var_dump($showTables);
+
             return $showTables;
         }
         $showTables = showArticle();
@@ -116,19 +158,25 @@ class ControllerBack
 
 
 
+//**
+// 
+//          GESTION DE LA PARTIE MEMBRES
+// 
+//**
+
+
+
     function gestionMembre(){
          // Va permettre de voir tout les membres de la table users
         function showUsers(){
             $showMembreManage= new \Projet\Models\membresAdminManager();
             $showUsers = $showMembreManage->showMembreManage();
             var_dump($showUsers);
+
             return $showUsers;
         }
         $showUsers = showUsers();
-        // Va permettre l'autorisation en mode admin
-        function updateUsers(){
 
-        }
         // Va permettre de créer des créers des membres dans la table users
         function createUsers(){
                 extract ($_POST);
@@ -178,25 +226,85 @@ class ControllerBack
                     unset($_POST['password']);
                     unset($_POST['passwordverif']);
     
-                
+                    header('Location: indexBack.php?action=gestionMembre');
                
             }
             return $errors;
 
         }
         $inscription = createUsers();
-        // Va permettre de supprimer des membres de la table Users
-        function deleteUsers(){
-            extract($_GET);
-            $delete = $_GET;
-                    $deleteUser = new \Projet\Models\membresAdminManager();
-                    $deleteUser->deleteMembreManage($delete);
-
-        }
-        $delete = deleteUsers();
-
+  
         require 'app/views/back/gestionMembre.php';
+        
     }
 
-}
+    function upgradeUsers($id){
 
+        $CrochetManager = new \Projet\Models\membresAdminManager;
+        $updateUser = $CrochetManager->upgradeMembreManage($id);
+
+        header('Location: indexBack.php?action=gestionMembre');
+
+        require 'app/views/back/gestionMembre.php';
+    
+    }
+
+    function reduceUsers($id){
+
+        $CrochetManager = new \Projet\Models\membresAdminManager;
+        $updateUser = $CrochetManager->reduceMembreManage($id);
+
+        header('Location: indexBack.php?action=gestionMembre');
+
+        require 'app/views/back/gestionMembre.php';
+    
+    }
+
+    function deleteUsers($id){
+
+        $CrochetManager = new \Projet\Models\membresAdminManager;
+        $deleteUser = $CrochetManager->deleteMembreManage($id);
+
+        header('Location: indexBack.php?action=gestionMembre');
+
+        require 'app/views/back/gestionMembre.php';
+    
+    }
+
+
+
+//**
+// 
+//          GESTION DE LA PARTIE CONTACT
+// 
+//**
+
+
+
+//  Function d'affichage des messages reçu
+    function showContact()
+    {
+        $showContactManage= new \Projet\Models\contactAdminManager();
+        $showContacts = $showContactManage->showContactManage();
+
+        require 'app/views/back/showContact.php';
+    }
+
+
+
+
+//**
+// 
+//          GESTION DE L'ACCES AU PANEL
+// 
+//**
+
+
+
+    function decoAdmin(){
+        session_destroy();
+        header('Location: /');
+
+        require 'app/views/back/decoAdmin.php';
+    }
+}

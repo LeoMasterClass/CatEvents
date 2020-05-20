@@ -1,47 +1,48 @@
+/* css lié a la page home */
 /* gestion du main */
-.container{
+.container {
     max-width: 1160px;
     background-color: white;
     margin: 0 auto;
     padding: 20px 0;
 }
+
 /* gestion slider */
 .slider{
-    max-width: 1080px;
-    width: 100%;
-    padding: 40px 0;
-    margin: 0 auto;
     position: relative;
 }
-.slider img{
+.slider img {
     max-width: 1080px;
     width: 100%;
 }
-.hover{
+
+/* lien slider */
+.bloc_lien{
+    top: 0;
+    right: 0;
     position: absolute;
-    z-index: 1000;
-    max-width: 1080px;
     width: 100%;
-    height: 525px;
-    top: 40px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
 }
-.hover:hover{
-    background-color: rgba(128, 128, 128,0.3);
+.bloc_lien:hover{
+    opacity: 1;
 }
-.hover a{
-    color: white;
-    font-size: 1.7rem;
-    width: 10%;
+.bloc_lien a{
+    position: absolute;
+    bottom: 0;
+    width: 8%;
+    margin: 0 auto;
     text-align: center;
+    color: white;
+    border: white 1px solid;
+    padding: 5px 10px;
     text-decoration: none;
-    position: absolute;
-    border: 1px solid white;
-    bottom:  50px;
-    box-shadow: 1px 1px solid white;
 }
 /* fin */
 /* section de vente */
-.article{
+.article {
     max-width: 1080px;
     width: 100%;
     margin: 0 auto;
@@ -50,20 +51,23 @@
     justify-content: space-between;
     margin-bottom: 40px;
 }
-.articlevente{
+
+.articlevente {
     position: relative;
     width: 345px;
     height: 345px;
     overflow: hidden;
 }
-.articlevente:hover img{
+
+.articlevente:hover img {
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
     -ms-transform: scale(1.2);
     -o-transform: scale(1.2);
 }
-.lienarticle{
+
+.lienarticle {
     position: absolute;
     width: 60%;
     top: 150px;
@@ -74,11 +78,12 @@
     padding: 5px 15px;
     color: black;
     text-decoration: none;
-    background-color: rgba(255, 255, 255,0.8);
+    background-color: rgba(255, 255, 255, 0.8);
 }
+
 /* fin */
 /* SECTION ARTICLE */
-.articlesI{
+.articlesI {
     max-width: 773px;
     width: 100%;
     margin: 0 auto;
@@ -87,27 +92,32 @@
     justify-content: flex-start;
     padding-bottom: 40px;
 }
-.article-i{
+
+.article-i {
     border-bottom: 1px solid grey;
     padding-top: 40px;
-    padding-bottom: 40px ;
+    padding-bottom: 40px;
 }
-.article-i img{
+
+.article-i img {
     max-width: 773px;
 }
-.article-i h2{
+
+.article-i h2 {
     text-align: center;
     font-size: 2rem;
     padding: 30px 0;
 }
-.article-i p{
+
+.article-i p {
     font-size: 1.2rem;
     padding-bottom: 20px;
 }
-.article-i a{
+
+.article-i a {
     text-decoration: none;
-    border: 1px solid rgb(180,138,93);
-    color: rgb(180,138,93);
+    border: 1px solid rgb(180, 138, 93);
+    color: rgb(180, 138, 93);
     font-size: 1.5rem;
     padding: 5px 15px;
     display: flex;
@@ -115,24 +125,33 @@
     width: 20%;
     margin: 0 auto;
 }
-.article-i a:hover{
-    background-color: rgb(180,138,93);
+
+.article-i a:hover {
+    background-color: rgb(180, 138, 93);
     color: white;
 }
+
 /* fin */
 /* assamblage artcilesI et asideI */
-.part2{
+.part2 {
     display: flex;
     flex-direction: row;
     max-width: 1160px;
 }
+
 /* aside */
-.asideI{
+.asideI {
     max-width: 307px;
     width: 100%;
     height: 484px;
 }
-.asideI h2{
+
+.asideI h2 {
     text-align: center;
     position: relative;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+
+
 }

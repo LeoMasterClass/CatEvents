@@ -1,0 +1,20 @@
+/* css lié au slider */
+.slider {
+    width: 1080px;
+    height: 525px;
+    overflow: hidden;
+    margin: 35px auto;
+ }
+ 
+.slider ul {
+     /* Pourcentage du width a modifier selon le besoin,
+     100% pour une image donc par exemple 4 images = 400% */
+    width: 400%;
+    height: 525px;
+    padding:0; margin:0;
+    list-style: none;
+}
+.slider li {
+    float: left;
+}
+

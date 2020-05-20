@@ -3,8 +3,14 @@
     <!-- Barre de connexion pour le compte utilisateur -->
         <div class="barre-connexion">
             <ul>
-                <li><a href="index.php?action=connexion" class="font-balloo-chettan">Connexion</a></li>
+
+                <?php if(isset($_SESSION['email'])) : ?>
+                <li><a href="index.php?action=compte" class="font-balloo-chettan">Mon compte</a></li>
+                <li><a href="index.php?action=deconnexion" class="font-balloo-chettan">Deconnexion</a></li>
+                <?php else : ?>
                 <li><a href="index.php?action=inscription" class="font-balloo-chettan">Inscription</a></li>
+                <li><a href="index.php?action=connexion" class="font-balloo-chettan">Connexion</a></li>
+                <?php endif ?>
             </ul>
         </div>
 

@@ -6,6 +6,7 @@ session_start();
 require_once __DIR__ . '/vendor/autoload.php';
 
 try {
+// appele au controllerFront
 $controllerFront = new \Projet\controllers\ControllerFront();
 if(isset($_GET['action'])){
     // amene a la page lié a l'action demander
@@ -29,6 +30,8 @@ if(isset($_GET['action'])){
         $controllerFront->compteFront();
     }else if($_GET['action'] == 'article'){
         $controllerFront->articlesFront();
+    }else if($_GET['action'] == 'deconnexion'){
+        $controllerFront->deconnexionFront();
     }
 }else{
     // Par défaut amene sur la page home.php

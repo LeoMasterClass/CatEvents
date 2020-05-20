@@ -10,10 +10,22 @@ class ControllerFront
         $homeFront= new \Projet\Models\HomeManager();
         $articles = $homeFront->articlesFront();
         $articlesventes = $homeFront->articlesventesFront();
-        var_dump($articles);
+        $liens = $homeFront->lienSliderFront();
+
+       
+    
+            $connexion = [];
+            $inscription = [];
+    
+            if(empty($_SESSION['email'])){
+                $connexion = "Connexion";
+                $inscription = "Inscription";
+            }
+       
 
         require 'app/views/front/home.php';
     }
+
     function contactFront(){
 
         function contact(){
@@ -69,33 +81,38 @@ class ControllerFront
 
         require 'app/views/front/contact.php';
     }
+
     function conceptFront(){
 
         require 'app/views/front/concept.php';
     }
+
     function quisuisjeFront(){
         $quisuisjeFront = new \Projet\Models\QuisuisjeManager();
         $images = $quisuisjeFront->imagesFront();
 
         require 'app/views/front/quisuisje.php';
     }
+
     function boutiqueFront(){
         require 'app/views/front/boutique.php';
     }
+
     function inspirationFront(){
         $inspirationFront = new \Projet\Models\InspirationManager();
         $postimages = $inspirationFront->PostInspiFront();
 
         require 'app/views/front/inspiration.php';
     }
+
     function diyFront(){
         $diyFront = new \Projet\Models\DiyManager();
         $diy = $diyFront->diy();
 
         require 'app/views/front/diy.php';
     }
-    public function connexionFront()
-    {
+
+    public function connexionFront(){
         function connexion(){
             extract ($_POST);
 
@@ -103,8 +120,7 @@ class ControllerFront
             
             $email = htmlspecialchars($_POST['email']);
             $password = htmlspecialchars($_POST['password']);
-            var_dump($email);
-            var_dump($password);
+
 
             $connexionManager = new \Projet\Models\ConnexionManager();
             $connexion = $connexionManager->postConnexion($email,$password);
@@ -126,18 +142,14 @@ class ControllerFront
 
         require 'app/views/front/connexion.php';
     }
-    function inscriptionFront()
-    {
+
+    function inscriptionFront(){
         function register(){
             extract ($_POST);
 
             $validation = true;
             
-            var_dump($firstName);
-            var_dump($name);
-            var_dump($email);
-            var_dump($password);
-            var_dump($passwordverif);
+
             $errors = [];
             if(empty($firstName) || empty($name) || empty($email) || empty($emailverif) || empty($password) || empty($passwordverif)){
                 $validation = false;
@@ -172,6 +184,7 @@ class ControllerFront
                 $inscriptionManager = new \Projet\Models\InscriptionManager();
                 $inscriptionManager->postRegister($firstName,$name,$email,$password);
 
+                header('Location: index.php?action=connexion');
                 
                 // unset($_POST['firstName']);
                 // unset($_POST['name']);
@@ -187,18 +200,20 @@ class ControllerFront
 
         require 'app/views/front/inscription.php';
     }
+
     function compteFront(){
 
         function viewInfo(){
             $compte = new \Projet\Models\CompteUtilisateurManager();
-            $infos = $compte->infosUser($email);
-            $infos->fetch();
-            var_dump($infos);
+            $infos = $compte->infosUser($_SESSION['email']);
+
+            return $infos;
         }
         $compte = viewInfo();
 
         require 'app/views/front/compte.php';
     }
+
     function articlesFront(){
 
 
@@ -218,12 +233,13 @@ class ControllerFront
 
         require 'app/views/front/article.php';
     }
-    function isConnect(){
-        if($_SESSION["email"] == true){
-            $deconnection = "Déconnection";
-            $compte = "Mon compte";
-            
-        }
+
+    function deconnexionFront()
+    {
+        session_destroy();
+        header('Location: index.php?action=connexion');
+
+        require 'app/views/front/deconnexion.php';
     }
 
 }

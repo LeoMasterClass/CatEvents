@@ -4,40 +4,55 @@
     if(!empty($_POST)){
         $errors = $inscription;
     }
+    // $delai=1; 
+    // $url='indexBack.php?action=gestionMembre';
+    // header("Refresh: $delai;url=$url");
 ?>
 
 
 <main class="container">
 
     <section class="membre-panel">
-    
+
+    <form action="" method="post">
+
     <table>
-    <tr>
+
+        <tr>
+
             <td class="titre-table">ID</td>
             <td class="titre-table">Email</td>
             <td class="titre-table">Nom de famille</td>
             <td class="titre-table">Prénom</td>
             <td class="titre-table">Admin</td>
-            <td class="titre-table">Admin auto</td>
+            <td class="titre-table">Accès panel</td>
             <td class="titre-table">Supprimer</td>
 
-
         </tr>
-    <?php while($showUser = $showUsers->fetch()) : ?>
 
 
+        <?php while($showUser = $showUsers->fetch()) : ?>
         <tr>
+
             <td class="text-align"><?= $showUser['id'] ?></td>
             <td><a href="index.php?action="><?= $showUser['email'] ?></a></td>
             <td><?= $showUser['firstName'] ?></td>
             <td><?= $showUser['name'] ?></td>
-            <td><?= $showUser['admin'] ?></td>
-            <td><a href=""><i class="icon-panel fas fa-edit"></i></a></td>
-            <td><a href="indexBack.php?id=<?= $showUser['id'] ?>"><i class="icon-panel fas fa-window-close"></i></a></td>       
+            <?php if($showUser['admin'] == 1) : ?>
+            <td class="text-align">Oui</td>
+            <?php else : ?>
+            <td class="text-align">Non</td>
+            <?php endif; ?>
+            <td class="icon_updown_admin"><a href="indexBack.php?action=upgradeMembre&id=<?= $showUser['id'] ?>"><i class="icon-panel fas fa-plus"></i></a><a href="indexBack.php?action=reduceMembre&id=<?= $showUser['id'] ?>"><i class="icon-panel fas fa-minus"></i></a></td>
+            <td><a href="indexBack.php?action=deleteMembre&id=<?= $showUser['id'] ?>"><i class="icon-panel fas fa-window-close"></i></a></td>       
+
         </tr>
         <?php endwhile ?>
         
     </table>
+
+    </form>
+
     <div class="create-member">
 
     <form method="post" action="">
@@ -56,7 +71,7 @@ if(isset($errors)):
     
     ?>
 
-            <div class="message-confirmation">Votre inscription est validé </div>
+            <div class="message-confirmation">L'inscription est validé </div>
 
 <?php 
 endif; 

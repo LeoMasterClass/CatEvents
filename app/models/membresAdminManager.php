@@ -12,10 +12,16 @@ class membresAdminManager extends Manager
         return $showArticleManage;
     }
     // Va permettre la modification des articles de la table articles
-    public function updateMembreManage(){
+    public function upgradeMembreManage($id){
         $bdd = $this->dbConnect();
         $updateArticleManage = $bdd->prepare("UPDATE users SET admin = 1 WHERE id = ?");
-        $updateArticleManage->execute(array());
+        $updateArticleManage->execute(array($id));
+        return $updateArticleManage;
+    }
+    public function reduceMembreManage($id){
+        $bdd = $this->dbConnect();
+        $updateArticleManage = $bdd->prepare("UPDATE users SET admin = 0 WHERE id = ?");
+        $updateArticleManage->execute(array($id));
         return $updateArticleManage;
     }
     // Va permettre de créer des articles dans table articles
@@ -31,10 +37,11 @@ class membresAdminManager extends Manager
         return $createArticleManage;
     }
     // Va permettre de supprimer des articles de la table articles
-    public function deleteMembreManage($delete){
+    public function deleteMembreManage($id){
         $bdd = $this->dbConnect();
-        $deleteArticleManage = $bdd->prepare("DELETE FROM `catevents`.`users` WHERE  `id`= ?");
-        $deleteArticleManage->execute(array($delete));
+        $deleteArticleManage = $bdd->prepare("DELETE FROM users WHERE id = ?");
+        $deleteArticleManage->execute(array($id));
+        $deleteArticleManage->fetch();
         return $deleteArticleManage;
     }
 

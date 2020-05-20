@@ -20,5 +20,11 @@ class HomeManager extends Manager
         $req->execute(array());
         return $req;
     }
-    
+    public function lienSliderFront()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT id FROM articles');
+        $req->execute(array());
+        return $req;
+    }
 }
