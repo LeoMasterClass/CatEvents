@@ -12,24 +12,49 @@ class ArticlesAdminManager extends Manager
         return $showArticleManage;
     }
     // Va permettre la modification des articles de la table articles
-    public function updateArticleManage(){
+    public function updateArticleManage($img, $img_pres, $title, $title_desc, $extract, $content, $image, $image_pres, $alt, $id){
+        var_dump($title);
+                var_dump($title_desc);
+                var_dump($extract);
+                var_dump($content);
+                var_dump($image);
+                var_dump($image_pres);
+                var_dump($alt);
+                var_dump($id);
         $bdd = $this->dbConnect();
-        $updateArticleManage = $bdd->prepare("UPDATE articles SET title, title_desc, extract, content, image WHERE id = ?");
-        $updateArticleManage->execute(array());
-        return $updateArticleManage;
+        $updateArticleManage = $bdd->prepare("UPDATE `articles` SET `title` = :title, `title_desc` = :title_desc, `extract` = :extract, `content` = :content, `image` = :image, `image_pres` = :image_pres, `alt` = :alt WHERE `id` = :id");
+        $updateArticleManage->execute(array(
+            ":title" => $title,
+            ":title_desc" => $title_desc,
+            ":extract" => $extract,
+            ":content" => $content,
+            ":image" => $image,
+            ":image_pres" => $image_pres,
+            ":alt" => $alt,
+            ":id" => $id,
+        ));
+    }
+    public function showUpdateArticleManage($id){
+        $bdd = $this->dbConnect();
+        $showArticlesID = $bdd->prepare("SELECT id, title, title_desc, extract, content, image, image_pres, alt FROM articles WHERE id = ?");
+        $showArticlesID->execute(array($id));
+        return $showArticlesID;
     }
     // Va permettre de créer des articles dans table articles
-    public function createArticleManage($title, $title_desc, $extract, $content, $image, $alt){
+    public function createArticleManage($img, $img_pres, $title, $title_desc, $extract, $content, $alt, $image, $image_pres){
         $bdd = $this->dbConnect();
-        $createArticleManage = $bdd->prepare("INSERT INTO articles (title, title_desc, extract, content, image) VALUES (?, ?, ?, ?, ?, ?)");
-        $createArticleManage->execute(array($title, $title_desc, $extract, $content, $image, $alt));
+        var_dump($image);
+        var_dump($image_pres);
+        $createArticleManage = $bdd->prepare("INSERT INTO articles (title, title_desc, extract, content, image, image_pres, alt) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $createArticleManage->execute(array($title, $title_desc, $extract, $content, $image, $image_pres, $alt));
         return $createArticleManage;
     }
     // Va permettre de supprimer des articles de la table articles
-    public function deleteArticleManage(){
+    public function deleteArticleManage($id){
         $bdd = $this->dbConnect();
-        $deleteArticleManage = $bdd->prepare("DELETE * FROM articles WHERE id = ?");
-        $deleteArticleManage->execute(array());
+        $deleteArticleManage = $bdd->prepare("DELETE FROM articles WHERE id = ?");
+        $deleteArticleManage->execute(array($id));
+        $deleteArticleManage->fetch();
         return $deleteArticleManage;
     }
 

@@ -7,7 +7,7 @@ class membresAdminManager extends Manager
     //Va permettre de voir tout les articles de la table articles
     public function showMembreManage(){
         $bdd = $this->dbConnect();
-        $showArticleManage = $bdd->prepare("SELECT id, email, firstName, name, admin FROM users ORDER BY id ASC");
+        $showArticleManage = $bdd->prepare("SELECT id, email, firstName, name, admin, created_at FROM users ORDER BY id ASC");
         $showArticleManage->execute(array());
         return $showArticleManage;
     }

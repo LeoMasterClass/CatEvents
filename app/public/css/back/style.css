@@ -6,3 +6,14 @@
 .font{
     font-family: 'Roboto', sans-serif;
 }
+/* utilisé pour les labels formulaires */
+.font-muli{
+    font-family: 'Muli', sans-serif;
+    font-size: 1.3rem;
+}
+/* Utilisé pour les textes de base du site */
+.font-anton{
+    font-family: 'Anton', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+}

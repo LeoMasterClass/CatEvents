@@ -24,6 +24,7 @@
             <td class="titre-table">Email</td>
             <td class="titre-table">Nom de famille</td>
             <td class="titre-table">Prénom</td>
+            <td class="titre-table">Date de création</td>
             <td class="titre-table">Admin</td>
             <td class="titre-table">Accès panel</td>
             <td class="titre-table">Supprimer</td>
@@ -38,6 +39,7 @@
             <td><a href="index.php?action="><?= $showUser['email'] ?></a></td>
             <td><?= $showUser['firstName'] ?></td>
             <td><?= $showUser['name'] ?></td>
+            <td class="text-align"><?= date('d-m-Y', strtotime($showUser['created_at'])) ?></td>
             <?php if($showUser['admin'] == 1) : ?>
             <td class="text-align">Oui</td>
             <?php else : ?>

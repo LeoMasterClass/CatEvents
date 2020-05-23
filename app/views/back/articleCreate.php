@@ -51,11 +51,15 @@ if(!empty($_POST)){
                 </div>
                 <div class="input-creation-article">
                 <label for="image" class="font-texte">Image de bannière:</label>
-                    <input type="file" name="image" placeholder="" value="">
+                    <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
+                    <input type="file"  name="image">
+                    <span><?php if(isset($error) && !empty($_FILES)){echo $error;}?></span>
                 </div>
                 <div class="input-creation-article">
                 <label for="image_pres" class="font-texte">Image présentation DIY:</label>
-                    <input type="file" name="image_pres" placeholder="" value="">
+                    <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
+                    <input type="file"  name="image_pres">
+                    <span><?php if(isset($error) && !empty($_FILES)){echo $error;}?></span>
                 </div>
                 <div class="input-creation-article">
                 <label for="alt" class="font-texte">Titre de référencement:</label>

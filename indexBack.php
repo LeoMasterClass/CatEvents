@@ -15,54 +15,108 @@ if(isset($_GET['action'])){
         }else{
             header('Location: /');
         }
-    }else if($_GET['action'] == 'articlesAdmin'){
+    }
+    else if($_GET['action'] == 'articlesAdmin'){
         if ($_SESSION['admin'] == 1) {
-        $controllerBack->articlesAdmin();
+        $controllerBack->showArticle();
         }else{
             header('Location: /');
         }
-    }else if($_GET['action'] == 'articlesCreate'){
+    }
+    else if($_GET['action'] == 'articlesCreate'){
         if ($_SESSION['admin'] == 1) {
         $controllerBack->articleCreate();
         }else{
             header('Location: /');
         }
-    }else if($_GET['action'] == 'gestionMembre'){
+    }
+    else if($_GET['action'] == 'articleUpdate'){
+        if ($_SESSION['admin'] == 1) {
+        $controllerBack->updateArticle();
+        }else{
+            header('Location: /');
+        }
+    }
+    else if($_GET['action'] == 'gestionMembre'){
         if ($_SESSION['admin'] == 1) {
         $controllerBack->gestionMembre();
         }else{
             header('Location: /');
         }
-    }else if($_GET['action'] == 'showContact'){
+    }
+    else if($_GET['action'] == 'showContact'){
         if ($_SESSION['admin'] == 1) {
         $controllerBack->ShowContact();
         }else{
             header('Location: /');
         }
-    }elseif ($_GET['action'] == 'deleteMembre'){
+        
+    }
+    elseif ($_GET['action'] == 'deleteContact'){
+        if ($_SESSION['admin'] == 1) {
+        $id = $_GET['id'];
+        $controllerBack->deleteContact($id);
+        }else{
+            header('Location: /');
+        }
+    }
+    elseif ($_GET['action'] == 'deleteMembre'){
         if ($_SESSION['admin'] == 1) {
         $id = $_GET['id'];
         $controllerBack->deleteUsers($id);
         }else{
             header('Location: /');
         }
-    }elseif ($_GET['action'] == 'upgradeMembre'){
+    }
+    elseif ($_GET['action'] == 'upgradeMembre'){
         if ($_SESSION['admin'] == 1) {
         $id = $_GET['id'];
         $controllerBack->upgradeUsers($id);
         }else{
             header('Location: /');
         }
-    }elseif ($_GET['action'] == 'reduceMembre'){
+    }
+    elseif ($_GET['action'] == 'reduceMembre'){
         if ($_SESSION['admin'] == 1) {
         $id = $_GET['id'];
         $controllerBack->reduceUsers($id);
         }else{
             header('Location: /');
         }
-    }elseif ($_GET['action'] == 'decoAdmin'){
+    }
+    elseif ($_GET['action'] == 'decoAdmin'){
         if ($_SESSION['admin'] == 1) {
         $controllerBack->decoAdmin();
+        }else{
+            header('Location: /');
+        }
+    }
+    elseif ($_GET['action'] == 'deleteArticle'){
+        if ($_SESSION['admin'] == 1) {
+        $id = $_GET['id'];
+        $controllerBack->deleteArticle($id);
+        }else{
+            header('Location: /');
+        }
+    }
+    elseif ($_GET['action'] == 'showInspi'){
+        if ($_SESSION['admin'] == 1) {
+        $controllerBack->showInspi();
+        }else{
+            header('Location: /');
+        }
+    }
+    elseif ($_GET['action'] == 'createInspi'){
+        if ($_SESSION['admin'] == 1) {
+        $controllerBack->createInspi();
+        }else{
+            header('Location: /');
+        }
+    }
+    elseif ($_GET['action'] == 'deleteInspi'){
+        if ($_SESSION['admin'] == 1) {
+        $id = $_GET['id'];
+        $controllerBack->deleteInspi($id);
         }else{
             header('Location: /');
         }

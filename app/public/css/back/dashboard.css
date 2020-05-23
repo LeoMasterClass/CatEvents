@@ -77,8 +77,14 @@ nav h2{
 .drop ul{
     list-style-type: none;
 }
+.drop ul li{
+    margin: 5px 0;
+}
 .drop a{
     color: black;
     text-decoration: none;
     font-size: 1.2rem;
+}
+.drop a:hover{
+    color: white;
 }

@@ -60,101 +60,128 @@ class ControllerBack
 
 
 
-    function articlesAdmin(){
-        // Va permettre de voir tout les articles de la table articles
-        function showArticle(){
-            $showArticleManage= new \Projet\Models\ArticlesAdminManager();
-            $showTables = $showArticleManage->showArticleManage();
-
-            return $showTables;
-        }
-        $showTables = showArticle();
-        // Va permettre la modification des articles de la table articles
-        function updateArticle(){
-
-        }
-        // Va permettre de supprimer des articles de la table articles
-        function deleteArticle(){
-            if($showtable == true){
-                $deleteArticleManage= new \Projet\Models\ArticlesAdminManager();
-                $deleteArticleManage->deleteArticleManage();
-            }
-        }
+    // Va permettre de voir tout les articles de la table articles
+    function showArticle(){
+        
+        $showArticleManage= new \Projet\Models\ArticlesAdminManager();
+        $showTables = $showArticleManage->showArticleManage();
 
         require 'app/views/back/articlesAdmin.php';
+
     }
-    function articleCreate(){
-        // Va permettre de créer des articles dans table articles
-        function articleCreate(){
-            extract($_POST);
-        
-            $validation = true;
-        
-            $errors = [];
-    
 
-        
-            if(empty($title) || empty($title_desc) || empty($extract) || empty($content) || empty($alt)){
-                $validation =false;
-                $errors[] = "Tout les champs son obligatoire !!!!";
-            }
 
-            else if(empty($title)){
-                $validation = false;
-        
-                $errors[] = "Il manque le titre a votre article";
-            }
+    // Va permettre la modification des articles de la table articles
+    function updateArticle(){
 
-            else if(empty($title_desc)){
-                $validation = false;
-        
-                $errors[] = "Il manque le titre de description a votre article";
-            }
+        $id = $_GET['id'];
+        $showArticle = new \Projet\Models\ArticlesAdminManager();
+        $showArticleID = $showArticle->showUpdateArticleManage($id);
 
-            else if(empty($extract)){
-                $validation = false;
-        
-                $errors[] = "Il manque le texte de description a votre article";
-            }
 
-            else if(empty($content)){
-                $validation = false;
-        
-                $errors[] = "Il manque le texte de votre article";
-            }
+        if (isset($_POST['title'], $_POST['title_desc'], $_POST['extract'], $_POST['content'], $_FILES['image'], $_FILES['image_pres'], $_POST['alt']) && !empty($_POST)) {
 
-            else if(empty($alt)){
-                $validation = false;
-        
-                $errors[] = "Il manque le titre de référencement";
-            }
+            $img = $_FILES['image'];
+            $img_pres = $_FILES['image_pres'];
+            $title=htmlentities($_POST['title']);
+            $title_desc=htmlentities($_POST['title_desc']);
+            $extract=htmlentities($_POST['extract']);
+            $content=htmlentities($_POST['content']);
+            $alt=htmlentities($_POST['alt']);
 
-            else if(isset($_FILES['file']) || $_FILES['file']['error'] > 0 ){
-                $validation = false;
-                $errors[] = "Il manque les images";
-            }
+            $image= "app/public/img/image/" . strtolower($img['name']);
+            $image_pres= "app/public/img/image/" . strtolower($img_pres['name']);
 
-            else if($validation){
-                $image = basename($_FILES["file"]["name"]);
-                move_uploaded_file($_FILES["file"]["tmp_name"],'app/img/image/'.$image);
+
+            $imageun = finfo_open(FILEINFO_MIME_TYPE);
+            $imageun = finfo_file($imageun, $img['tmp_name']);
+            $imagedeux = finfo_open(FILEINFO_MIME_TYPE);
+            $imagedeux = finfo_file($imagedeux, $img_pres['tmp_name']);
+            
+            if ($imageun === 'image/png' || $imageun === 'image/jpeg' && $imagedeux === 'image/png' || $imagedeux === 'image/jpeg') {
+
                 
-                var_dump($title);
-                var_dump($title_desc);
-                var_dump($extract);
-                var_dump($content);
-                var_dump($_FILES);
-                var_dump($alt);
-                $contactManager = new \Projet\Models\ArticlesAdminManager();
-                $contactManager->createArticleManage($title, $title_desc, $extract, $content, $image ,$alt);
+                $createArticle = new \Projet\Models\ArticlesAdminManager();
+                $createArticle->updateArticleManage($img, $img_pres, $title, $title_desc, $extract, $content, $image, $image_pres, $alt, $id);
+                move_uploaded_file($img['tmp_name'], "app/public/img/image/" . $img['name']);
+                move_uploaded_file($img_pres['tmp_name'], "app/public/img/image/" . $img_pres['name']);
 
-    
+                header('Location: indexBack.php?action=articlesAdmin');
+            } elseif ($imageun === false && $imagedeux === false) {
+
+                $error = "Le format n'est pas détecté";
+                echo $error;
+
+            } else {
+
+                $error = "Le format n'est pas jpeg ou png";
+                echo $error;
+
             }
-
-            return $errors;
         }
-        $createArticle = articleCreate();
+        
+        require 'app/views/back/articleUpdate.php';
+        
+    }
+    // Va permettre de supprimer des articles de la table articles
+    function deleteArticle($id){
+
+        $articlesManager = new \Projet\Models\ArticlesAdminManager;
+        $deleteArticle = $articlesManager->deleteArticleManage($id);
+
+        header('Location: indexBack.php?action=articlesAdmin');
+
+        require 'app/views/back/articlesAdmin.php';
+    
+    }
+
+    // Va permettre de créer des articles dans table articles
+    function articleCreate(){
+        extract($_POST);
+        
+        if (isset($_POST['title'], $_POST['title_desc'], $_POST['extract'], $_POST['content'], $_FILES['image'], $_FILES['image_pres'], $_POST['alt']) && !empty($_POST)) {
+
+            $img = $_FILES['image'];
+            $img_pres = $_FILES['image_pres'];
+            $title=htmlentities($_POST['title']);
+            $title_desc=htmlentities($_POST['title_desc']);
+            $extract=htmlentities($_POST['extract']);
+            $content=htmlentities($_POST['content']);
+            $alt=htmlentities($_POST['alt']);
+
+            $image= "app/public/img/image/" . strtolower($img['name']);
+            $image_pres= "app/public/img/image/" . strtolower($img_pres['name']);
+
+
+            $imageun = finfo_open(FILEINFO_MIME_TYPE);
+            $imageun = finfo_file($imageun, $img['tmp_name']);
+            $imagedeux = finfo_open(FILEINFO_MIME_TYPE);
+            $imagedeux = finfo_file($imagedeux, $img_pres['tmp_name']);
+            
+            if ($imageun === 'image/png' || $imageun === 'image/jpeg' && $imagedeux === 'image/png' || $imagedeux === 'image/jpeg') {
+
+                $createArticle = new \Projet\Models\ArticlesAdminManager();
+                $createArticle->createArticleManage($img, $img_pres, $title, $title_desc, $extract, $content, $alt, $image, $image_pres);
+                move_uploaded_file($img['tmp_name'], "app/public/img/image/" . $img['name']);
+                move_uploaded_file($img_pres['tmp_name'], "app/public/img/image/" . $img_pres['name']);
+
+            } elseif ($imageun === false && $imagedeux === false) {
+
+                $error = "Le format n'est pas détecté";
+                echo $error;
+
+            } else {
+
+                $error = "Le format n'est pas jpeg ou png";
+                echo $error;
+
+            }
+        }
+        
         require 'app/views/back/articleCreate.php';
     }
+    
+    
 
 
 
@@ -202,10 +229,6 @@ class ControllerBack
                     $errors[] = "Le mot de passe de confirmation est incorrect !";
                 }   
     
-                // if(pseudo_check($pseudo)){
-                //     $validation = false;
-                //     $errors[] = 'Ce pseudo est déjà pris !';
-                // };
                 else if($validation){
     
                     $firstName = $_POST['firstName'];
@@ -218,13 +241,6 @@ class ControllerBack
                     $inscriptionManager = new \Projet\Models\membresAdminManager();
                     $inscriptionManager->createMembreManage($firstName,$name,$email,$password);
     
-                    
-                    unset($_POST['firstName']);
-                    unset($_POST['name']);
-                    unset($_POST['email']);
-                    unset($_POST['emailverif']);
-                    unset($_POST['password']);
-                    unset($_POST['passwordverif']);
     
                     header('Location: indexBack.php?action=gestionMembre');
                
@@ -290,6 +306,80 @@ class ControllerBack
         require 'app/views/back/showContact.php';
     }
 
+    function deleteContact($id){
+
+        $deleteManager = new \Projet\Models\contactAdminManager;
+        $deleteUser = $deleteManager->deleteContactManage($id);
+
+        header('Location: indexBack.php?action=showContact');
+
+        require 'app/views/back/showContact.php';
+    
+    }
+
+
+
+//**
+// 
+//          Gestion de la partie INSPÏRATION
+// 
+//**
+
+
+
+    function showInspi()
+    {
+        $showInspiManage= new \Projet\Models\inspiAdminManager();
+        $showInspis = $showInspiManage->showInspiManage();
+
+        require 'app/views/back/showInspi.php';
+    }
+    
+    function createInspi()
+    {
+        extract($_POST);
+        
+        if (isset($_POST['desc'], $_POST['alt'], $_FILES['image']) && !empty($_POST)) {
+
+            $img = $_FILES['image'];
+            $desc=htmlentities($_POST['desc']);
+            $alt=htmlentities($_POST['alt']);
+
+            $image= "app/public/img/image/" . strtolower($img['name']);
+
+
+            $imageun = finfo_open(FILEINFO_MIME_TYPE);
+            $imageun = finfo_file($imageun, $img['tmp_name']);
+            
+            if ($imageun === 'image/png' || $imageun === 'image/jpeg' && $imagedeux === 'image/png' || $imagedeux === 'image/jpeg') {
+
+                $createInspi = new \Projet\Models\inspiAdminManager();
+                $createInspi->createInspiManage($img, $image, $desc, $alt );
+                move_uploaded_file($img['tmp_name'], "app/public/img/image/" . $img['name']);
+
+            } elseif ($imageun === false && $imagedeux === false) {
+
+                $error = "Le format n'est pas détecté";
+                echo $error;
+
+            } else {
+
+                $error = "Le format n'est pas jpeg ou png";
+                echo $error;
+
+            }
+        }
+
+        require 'app/views/back/createInspi.php';
+    }
+
+    function deleteInspi()
+    {
+        $deleteInspiManage= new \Projet\Models\inspiAdminManager();
+        $deleteInspi = $deleteInspiManage->showInspiManage($id);
+
+        require 'app/views/back/showInspi.php';
+    }
 
 
 

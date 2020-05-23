@@ -24,8 +24,8 @@
             <td><a href="index.php?action=article&id=<?= $showTable['id'] ?>"><?= $showTable['title'] ?></a></td>
             <td><?= $showTable['extract'] ?></td>
             <td><?= date('d-m-Y', strtotime($showTable['created_at'])) ?></td>
-            <td><a href=""><i class="icon-panel fas fa-edit"></i></a></td>
-            <td><a href="<?= $showTable['id'] ?>"><i class="icon-panel fas fa-window-close"></i></a></td>       
+            <td><a href="indexBack.php?action=articleUpdate&id=<?= $showTable['id'] ?>"><i class="icon-panel fas fa-edit"></i></a></td>
+            <td><a href="indexBack.php?action=deleteArticle&id=<?= $showTable['id'] ?>"><i class="icon-panel fas fa-window-close"></i></a></td>       
         </tr>
         <?php endwhile ?>
         

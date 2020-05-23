@@ -27,7 +27,7 @@
             <td><?= $showContact['objet'] ?></td>
             <td><?= $showContact['content'] ?></td>
             <td><?= date('d-m-Y', strtotime($showContact['created_at'])) ?></td>
-            <td><a href="<?= $showContact['id'] ?>"><i class="icon-panel fas fa-window-close"></i></a></td>       
+            <td><a href="indexBack.php?action=deleteContact&id=<?= $showContact['id'] ?>"><i class="icon-panel fas fa-window-close"></i></a></td>       
         </tr>
         <?php endwhile ?>
         
