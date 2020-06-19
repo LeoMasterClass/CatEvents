@@ -1,6 +1,6 @@
 <?php 
-    include_once "app/views/back/layouts/head.php";
-    include_once "app/views/back/layouts/header.php";
+    include_once "app/Views/back/layouts/head.php";
+    include_once "app/Views/back/layouts/header.php";
 if(!empty($_POST)){
     $errors = $createArticle;
 }
@@ -76,5 +76,5 @@ if(!empty($_POST)){
     </section>
 </main>
 <?php
-    include_once "app/views/back/layouts/head.php";
+    include_once "app/Views/back/layouts/head.php";
 ?>

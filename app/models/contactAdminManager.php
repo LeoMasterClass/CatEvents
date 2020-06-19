@@ -1,8 +1,8 @@
 <?php
 
-namespace Projet\models;
+namespace Projet\Models;
 
-class contactAdminManager extends Manager
+class ContactAdminManager extends Manager
 {
 // gere les infos rentrer par l'utilisateur
     public function showContactManage(){

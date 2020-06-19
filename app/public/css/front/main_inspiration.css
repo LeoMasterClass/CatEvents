@@ -23,3 +23,14 @@
 .inspiration article img:nth-child(0n+10){
     width: 49%;
 }
+
+@media screen and (min-width: 769px) and (max-width: 959px) {
+    .inspiration{
+        max-width: 700px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .inspiration{
+        max-width: 500px;
+    }
+}

@@ -3,34 +3,35 @@
 session_start();
 
 
+
 require_once __DIR__ . '/vendor/autoload.php';
 
 try {
 // appele au controllerFront
-$controllerFront = new \Projet\controllers\ControllerFront();
+$controllerFront = new \Projet\Controllers\ControllerFront();
 if(isset($_GET['action'])){
     // amene a la page lié a l'action demander
     if($_GET['action'] == 'contact'){
         $controllerFront->contactFront();
-    }else if($_GET['action'] == 'concept'){
+    }elseif($_GET['action'] == 'concept'){
         $controllerFront->conceptFront();
-    }else if($_GET['action'] == 'quisuisje'){
+    }elseif($_GET['action'] == 'quisuisje'){
         $controllerFront->quisuisjeFront();
-    }else if($_GET['action'] == 'inspiration'){
+    }elseif($_GET['action'] == 'inspiration'){
         $controllerFront->inspirationFront();
-    }else if($_GET['action'] == 'boutique'){
+    }elseif($_GET['action'] == 'boutique'){
         $controllerFront->boutiqueFront();
-    }else if($_GET['action'] == 'diy'){
+    }elseif($_GET['action'] == 'diy'){
         $controllerFront->diyFront();
-    }else if($_GET['action'] == 'connexion'){
+    }elseif($_GET['action'] == 'connexion'){
         $controllerFront->connexionFront();
-    }else if($_GET['action'] == 'inscription'){
+    }elseif($_GET['action'] == 'inscription'){
         $controllerFront->inscriptionFront();
-    }else if($_GET['action'] == 'compte'){
+    }elseif($_GET['action'] == 'compte'){    
         $controllerFront->compteFront();
-    }else if($_GET['action'] == 'article'){
+    }elseif($_GET['action'] == 'article'){
         $controllerFront->articlesFront();
-    }else if($_GET['action'] == 'deconnexion'){
+    }elseif($_GET['action'] == 'deconnexion'){
         $controllerFront->deconnexionFront();
     }
 }else{

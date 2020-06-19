@@ -1,90 +1,32 @@
-/* css lié a la page admin*/
-/* header du panel admin */
-header{
-    width: 100%;
-    background-color: ;
-}
-nav {
+/* css lié a la page admin */
+
+
+.dashboard{
+    padding: 30px;
+    width: 90%;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
-    padding: 25px 0;
-}
-.title-admin{
-    font-size: 1.8rem;
-}
-nav a{
-    text-decoration: none;
-    color: black;
+    margin: 0 auto;
 }
 
-nav h2{
-    font-size: 1.3rem;
-    display: flex;
-    align-items: center;
-}
-
-/* Contenu principale de la page d'accueil du panel admin */
-.container{
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 25px 0;
+.bloc-dashboard{
+    width: 40%;
+    margin: 25px 0;
+    padding: 25px;
     background-color: rgb(243,222,203);
 }
-.modifs{
-    width: 80%;
 
-    margin: 0 auto;
-    padding: 25px 0;
-    background-color: white;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+.bloc-dashboard h2{
+    height: 100px;
 }
-.gestion{
-    width: 60%;
-    margin: 10px auto;
-    background-color: rgb(245, 213, 184);
-}
-.gestion h2{
-    padding: 30px 10px;
-    text-align: center;
-}
-.gestion:hover{
-    color: white;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-}
-.drop{
-    background-color: rgb(243,222,203);
-    display: none;
-    width: 60%;
-    margin: 0 auto;
-    padding: 20px 0;
-    text-align: center;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-}
-.drop ul{
+
+.bloc-dashboard li{
     list-style-type: none;
+    padding-left: 35px;
+    padding-bottom: 10px;
 }
-.drop ul li{
-    margin: 5px 0;
-}
-.drop a{
-    color: black;
+.bloc-dashboard li a{
     text-decoration: none;
-    font-size: 1.2rem;
-}
-.drop a:hover{
-    color: white;
+    color: black;
 }

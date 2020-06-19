@@ -19,7 +19,7 @@ body{
 }
 .barre-connexion ul{
     justify-content: flex-end;
-    max-width: 1160px;
+    max-width: 900px;
     width: 100%;
     margin: 0 auto;
 }
@@ -46,7 +46,7 @@ body{
 }
 
 .bandeau-header img {
-    max-width: 800px;
+    max-width: 900px;
 }
 
 .barre-navigation{
@@ -54,15 +54,14 @@ body{
 }
 /* modif a revoir */
 .barre-navigation ul{
-    justify-content: center;
+    justify-content: space-between;
     margin: 0 auto;
-    max-width: 1160px;
+    max-width: 960px;
     width: 100%;
 }
 .barre-navigation ul a{
-    font-size: 1.2rem;
-    padding: 15px 40px;
-    margin: 0 5px;
+    font-size: 1.1rem;
+    padding: 10px 25px;
     border-bottom: 2px solid white;
     background-color: rgb(161, 121, 85);
     border-radius: 20px 20px 0 0;
@@ -71,15 +70,13 @@ body{
     -ms-border-radius: 20px 20px 0 0;
     -o-border-radius: 20px 20px 0 0;
     text-align: center;
-}
-.barre-navigation ul a {
     text-decoration: none;
     color: rgb(255, 255, 255);
 }
+
 .barre-navigation ul a:nth-child(2n){ 
-    font-size: 1.3rem;
-    padding: 15px 25px;
-    margin: 0 5px;
+    font-size: 1.1rem;
+    padding: 10px 25px;
     border-bottom: 2px solid white;
     background-color: rgb(72, 55, 38);
     border-radius: 20px 20px 0 0;
@@ -88,9 +85,127 @@ body{
     -ms-border-radius: 20px 20px 0 0;
     -o-border-radius: 20px 20px 0 0;
 }
+#navigation-mobile,
+.navigation-mobile{
+    display: none;
+}
 /* fin modif */
 /* fin */
 
-@media screen and (min-width: 769px) and (max-width: 1199px) {
+@media screen and (min-width: 769px) and (max-width: 959px) {
+    .bandeau-header img {
+        max-width: 700px;
+    } 
 
+    .barre-connexion ul{
+        justify-content: flex-end;
+        max-width: 700px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .barre-navigation ul{
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 769px;
+        width: 100%;
+    }
+    .barre-navigation ul a{
+        font-size: 1rem;
+        padding: 10px 25px;
+        border-bottom: 2px solid white;
+        background-color: rgb(161, 121, 85);
+        border-radius: 20px 20px 0 0;
+        -webkit-border-radius: 20px 20px 0 0;
+        -moz-border-radius: 20px 20px 0 0;
+        -ms-border-radius: 20px 20px 0 0;
+        -o-border-radius: 20px 20px 0 0;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 768px) {
+    .bandeau-header img{
+        max-width: 500px;
+    }
+    .barre-connexion ul{
+        max-width: 500px;
+    }
+    .barre-connexion ul li{
+        font-size: 1.1rem;
+    }
+
+
+
+
+
+
+    .barre-navigation {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding:0;
+       width: 546px;
+    }
+    .barre-navigation ul{
+        display: none;
+    }
+    .barre-navigation ul a{
+        font-size: 1.1rem;
+        padding: 0;
+        border-bottom: none;
+        background-color: none;
+        border-radius: 20px 20px 0 0;
+        -webkit-border-radius: 20px 20px 0 0;
+        -moz-border-radius: 20px 20px 0 0;
+        -ms-border-radius: 20px 20px 0 0;
+        -o-border-radius: 20px 20px 0 0;
+        text-align: center;
+    }
+    .barre-navigation ul a:nth-child(2n){ 
+        font-size: 1.1rem;
+        padding: 0;
+        border-bottom: none;
+        background-color: none;
+        border-radius: 20px 20px 0 0;
+        -webkit-border-radius: 20px 20px 0 0;
+        -moz-border-radius: 20px 20px 0 0;
+        -ms-border-radius: 20px 20px 0 0;
+        -o-border-radius: 20px 20px 0 0;
+    }
+    .barre-navigation ul li {
+        display: block;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+
+    .barre-navigation label img{
+        display: block;
+        margin: 10px auto;
+        width: 20%;
+    }
+
+    .barre-navigation .navigation-mobile {
+        display: block;
+        padding: 12px 10px;
+    
+      
+       
+    }
+    .barre-navigation label{
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .barre-navigation [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: relative;
+        left: -9999px;
+    }
+  
+
+    .barre-navigation [type="checkbox"]:checked+label+ul {
+        display: block;      
+        transition: all 100ms;
+        -webkit-transition: all 100ms;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Projet\controllers;
+namespace Projet\Controllers;
 
 class ControllerFront
 {
@@ -23,7 +23,7 @@ class ControllerFront
             }
        
 
-        require 'app/views/front/home.php';
+        require 'app/Views/front/home.php';
     }
 
     function contactFront(){
@@ -79,37 +79,37 @@ class ControllerFront
 
         $contact = contact();
 
-        require 'app/views/front/contact.php';
+        require 'app/Views/front/contact.php';
     }
 
     function conceptFront(){
 
-        require 'app/views/front/concept.php';
+        require 'app/Views/front/concept.php';
     }
 
     function quisuisjeFront(){
         $quisuisjeFront = new \Projet\Models\QuisuisjeManager();
         $images = $quisuisjeFront->imagesFront();
 
-        require 'app/views/front/quisuisje.php';
+        require 'app/Views/front/quisuisje.php';
     }
 
     function boutiqueFront(){
-        require 'app/views/front/boutique.php';
+        require 'app/Views/front/boutique.php';
     }
 
     function inspirationFront(){
         $inspirationFront = new \Projet\Models\InspirationManager();
         $postimages = $inspirationFront->PostInspiFront();
 
-        require 'app/views/front/inspiration.php';
+        require 'app/Views/front/inspiration.php';
     }
 
     function diyFront(){
         $diyFront = new \Projet\Models\DiyManager();
         $diy = $diyFront->diy();
 
-        require 'app/views/front/diy.php';
+        require 'app/Views/front/diy.php';
     }
 
     public function connexionFront(){
@@ -118,8 +118,8 @@ class ControllerFront
 
             $errors = []; 
             
-            $email = htmlspecialchars($_POST['email']);
-            $password = htmlspecialchars($_POST['password']);
+            $email = !empty($_POST['email']) ? $_POST['email'] : NULL;
+            $password = !empty($_POST['password']) ? $_POST['password'] : NULL;
 
 
             $connexionManager = new \Projet\Models\ConnexionManager();
@@ -140,7 +140,7 @@ class ControllerFront
         }
         $connexion = connexion();
 
-        require 'app/views/front/connexion.php';
+        require 'app/Views/front/connexion.php';
     }
 
     function inscriptionFront(){
@@ -198,7 +198,7 @@ class ControllerFront
         }
         $inscription = register();
 
-        require 'app/views/front/inscription.php';
+        require 'app/Views/front/inscription.php';
     }
 
     function compteFront(){
@@ -211,7 +211,7 @@ class ControllerFront
         }
         $compte = viewInfo();
 
-        require 'app/views/front/compte.php';
+        require 'app/Views/front/compte.php';
     }
 
     function articlesFront(){
@@ -224,14 +224,14 @@ class ControllerFront
             $articles = $article->article($id);
 
             if(empty($articles)){
-                header('Location: app/views/front/home.php');
+                header('Location: /');
             }else{
                 return $articles;
             }
         }
         $articles = articles();
 
-        require 'app/views/front/article.php';
+        require 'app/Views/front/article.php';
     }
 
     function deconnexionFront()
@@ -239,7 +239,7 @@ class ControllerFront
         session_destroy();
         header('Location: index.php?action=connexion');
 
-        require 'app/views/front/deconnexion.php';
+        require 'app/Views/front/deconnexion.php';
     }
 
 }

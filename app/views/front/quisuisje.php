@@ -1,10 +1,10 @@
 <?php
-include_once "app/views/front/layouts/head.php";
-include_once "app/views/front/layouts/header.php"
+include_once "app/Views/front/layouts/head.php";
+include_once "app/Views/front/layouts/header.php"
 ?>
 
 <main class="container">
-    <div class="part2">
+
     <section class="quisuisje">
         <article>
             <h1 class="font-titre">Qui Suis-je ?</h2>
@@ -28,11 +28,10 @@ include_once "app/views/front/layouts/header.php"
             <p class="font-texte">Julia</p>
         </article>
     </section>
-    <?php include_once 'app/views/front/layouts/aside.php' ?>
-    </div>
+
 </main>
 
 
 <?php
-include_once 'app/views/front/layouts/footer.php'
+include_once 'app/Views/front/layouts/footer.php'
 ?>

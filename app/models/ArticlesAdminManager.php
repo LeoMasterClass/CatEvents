@@ -1,6 +1,6 @@
 <?php
 
-namespace Projet\models;
+namespace Projet\Models;
 
 class ArticlesAdminManager extends Manager
 {
@@ -13,14 +13,7 @@ class ArticlesAdminManager extends Manager
     }
     // Va permettre la modification des articles de la table articles
     public function updateArticleManage($img, $img_pres, $title, $title_desc, $extract, $content, $image, $image_pres, $alt, $id){
-        var_dump($title);
-                var_dump($title_desc);
-                var_dump($extract);
-                var_dump($content);
-                var_dump($image);
-                var_dump($image_pres);
-                var_dump($alt);
-                var_dump($id);
+
         $bdd = $this->dbConnect();
         $updateArticleManage = $bdd->prepare("UPDATE `articles` SET `title` = :title, `title_desc` = :title_desc, `extract` = :extract, `content` = :content, `image` = :image, `image_pres` = :image_pres, `alt` = :alt WHERE `id` = :id");
         $updateArticleManage->execute(array(

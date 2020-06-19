@@ -3,7 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CatEvents</title>
-    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+                        <!-- CSS -->
+                        <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
     <link rel="stylesheet" href="app/public/css/front/header.css">    
     <link rel="stylesheet" href="app/public/css/front/connexion.css">
     <link rel="stylesheet" href="app/public/css/front/article.css">
@@ -17,14 +18,22 @@
     <link rel="stylesheet" href="app/public/css/front/compteUtilisateur.css">
     <link rel="stylesheet" href="app/public/css/front/footer.css">
     <link rel="stylesheet" href="app/public/css/front/slider.css">
+    <link rel="icon" href="app/public/img/logo/favicon.jpeg" />
+    <link rel="stylesheet" href="app/public/css/front/style.css">
+
+                        <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bellota&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="app/public/css/front/style.css">
-    <link rel="icon" href="app/public/img/logo/favicon.jpeg" />
-    <script defer src="app/public/js/front/jquery-3.5.1.js"></script>
-    <script defer src="app/public/js/front/slider.js"></script>
+
+                        <!-- JavaScript -->
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js" defer></script>
+    <script src="https://kit.fontawesome.com/c123eab75c.js" crossorigin="anonymous" defer></script>
+    <script defer src="app/public/js/front/slider.js" defer></script>
+    <script defer src="app/public/js/front/API-MapQuest.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous" defer></script>
+
 </head>
 
 <body>

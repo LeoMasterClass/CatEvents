@@ -1,6 +1,6 @@
 <?php
-include_once "app/views/front/layouts/head.php";
-include_once "app/views/front/layouts/header.php";
+include_once "app/Views/front/layouts/head.php";
+include_once "app/Views/front/layouts/header.php";
 include_once 'app/controllers/ControllerFront.php';
 if(!empty($_POST)){
     $errors = $contact;
@@ -9,7 +9,7 @@ if(!empty($_POST)){
 
 <main class="container">
 
-    <div class="part2">
+    <div class="contact-split">
 
     <section class="contact">
 
@@ -64,7 +64,10 @@ if(!empty($_POST)){
         </form>
 
         </section>
-        <?php include_once 'app/views/front/layouts/aside.php' ?>
+        <div class="map">
+            <h2 class="font-titre">Ou me trouver:</h2>
+            <div id="map"></div>
+        </div>
 
     </div>
 
@@ -72,5 +75,5 @@ if(!empty($_POST)){
 
 
 <?php
-include_once 'app/views/front/layouts/footer.php'
+include_once 'app/Views/front/layouts/footer.php'
 ?>

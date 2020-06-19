@@ -1,6 +1,6 @@
 <?php 
-    include_once "app/views/back/layouts/head.php";
-    include_once "app/views/back/layouts/header.php";
+    include_once "app/Views/back/layouts/head.php";
+    include_once "app/Views/back/layouts/header.php";
 ?>
 
 
@@ -8,14 +8,14 @@
 
     <section class="article-panel">
     
-    <table>
+    <table class="table">
     <tr>
-            <td class="titre-table">ID</td>
-            <td class="titre-table">Titre</td>
-            <td class="titre-table">Description</td>
-            <td class="titre-table">Date de création</td>
-            <td class="titre-table">Modifier</td>
-            <td class="titre-table">Supprimer</td>
+            <th class="font-text">ID</th>
+            <th class="font-text">Titre</th>
+            <th class="font-text">Description</th>
+            <th class="font-text">Date de création</th>
+            <th class="font-text">Modifier</th>
+            <th class="font-text">Supprimer</th>
         </tr>
     
         <?php while($showTable = $showTables->fetch()) : ?>
@@ -38,5 +38,5 @@
 
 
 <?php
-    include_once "app/views/back/layouts/head.php";
+    include_once "app/Views/back/layouts/head.php";
 ?>

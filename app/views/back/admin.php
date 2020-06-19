@@ -1,72 +1,52 @@
 <?php 
-    include_once "app/views/back/layouts/head.php";
-    include_once "app/views/back/layouts/header.php";
+    include_once "app/Views/back/layouts/head.php";
+    include_once "app/Views/back/layouts/header.php";
 ?>
 
 <main class="container">
 
 
-<section class="modifs">
+<section class="dashboard">
 
-    <div class="gestion font" id="gestion1">
+    <div class="bloc-dashboard">
 
-        <h2 class="font">Gestion des articles...   <i class="fas fa-angle-down"></i></h2>
-
-    </div>
-
-    <div class="drop" id="drop1">
+        <h2 class="font-titre">Gestion des articles...</h2>
 
         <ul>
-            <li class="font"><a class="showfleche" href="indexBack.php?action=articlesAdmin"><i class="fleche fas fa-angle-right"></i>   Panel articles</a></li>
-            <li class="font"><a class="showfleche" href="indexBack.php?action=articlesCreate"><i class="fleche fas fa-angle-right"></i>   Créer un article</a></li>
+            <li class="font-text"><a class="showfleche" href="indexBack.php?action=articlesAdmin">-Panel articles</a></li>
+            <li class="font-text"><a class="showfleche" href="indexBack.php?action=articlesCreate">-Créer un article</a></li>
         </ul>
 
     </div>
 
-    <div class="gestion" id="gestion2">
+    <div class="bloc-dashboard">
 
-        <h2 class="font">Gestion des messages contact...   <i class=" fas fa-angle-down"></i></h2>
-
-    </div>
-
-    <div class="drop" id="drop2">
+        <h2 class="font-titre">Gestion des messages contact...</h2>
 
         <ul>
-            <li class="font"><a class="showfleche" href="indexBack.php?action=showContact"><i class="fleche fas fa-angle-right"></i>   Panel message de contact</a></li>
+            <li class="font-text"><a class="showfleche" href="indexBack.php?action=showContact">-Panel message de contact</a></li>
 
         </ul>
 
     </div>
 
-    <div class="gestion" id="gestion3">
+    <div class="bloc-dashboard">
 
-        <h2 class="font">Gestions des images d'inspiration...   <i class=" fas fa-angle-down"></i></h2>
-
-
-
-    </div>
-
-    <div class="drop" id="drop3">
+        <h2 class="font-titre">Gestions des images d'inspiration...</h2>
 
         <ul>
-            <li class="font"><a class="showfleche" href="indexBack.php?action=showInspi"><i class="fleche fas fa-angle-right"></i>   Panel inspirations</a></li>
-            <li class="font"><a class="showfleche" href="indexBack.php?action=createInspi"><i class="fleche fas fa-angle-right"></i>   Ajouter une inspirations</a></li>
+            <li class="font-text"><a class="showfleche" href="indexBack.php?action=showInspi">-Panel inspirations</a></li>
+            <li class="font-text"><a class="showfleche" href="indexBack.php?action=createInspi">-Ajouter une inspiration</a></li>
         </ul>
 
     </div>
 
-    <div class="gestion" id="gestion4">
+    <div class="bloc-dashboard">
 
-        <h2 class="font">Gestions des membres utilisateurs...   <i class=" fas fa-angle-down"></i></h2>
-
-
-
-    </div>
-
-    <div class="drop" id="drop4">
+        <h2 class="font-titre">Gestions des membres utilisateurs...</h2>
 
         <ul>
-            <li class="font"><a class="showfleche" href="indexBack.php?action=gestionMembre"><i class="fleche fas fa-angle-right"></i>   Panel utilisateur</a></li>
+            <li class="font-text"><a class="showfleche" href="indexBack.php?action=gestionMembre">-Panel utilisateur</a></li>
         </ul>
 
     </div>
@@ -77,5 +57,5 @@
 </main>
 
 <?php
-    include_once "app/views/back/layouts/head.php";
+    include_once "app/Views/back/layouts/head.php";
 ?>

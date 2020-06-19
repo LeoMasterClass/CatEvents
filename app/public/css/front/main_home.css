@@ -1,49 +1,14 @@
 /* css lié a la page home */
-/* gestion du main */
-.container {
-    max-width: 1160px;
-    background-color: white;
-    margin: 0 auto;
-    padding: 20px 0;
-}
+
 
 /* gestion slider */
-.slider{
-    position: relative;
-}
-.slider img {
-    max-width: 1080px;
-    width: 100%;
-}
 
-/* lien slider */
-.bloc_lien{
-    top: 0;
-    right: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-}
-.bloc_lien:hover{
-    opacity: 1;
-}
-.bloc_lien a{
-    position: absolute;
-    bottom: 0;
-    width: 8%;
-    margin: 0 auto;
-    text-align: center;
-    color: white;
-    border: white 1px solid;
-    padding: 5px 10px;
-    text-decoration: none;
-}
+
+
 /* fin */
 /* section de vente */
 .article {
-    max-width: 1080px;
+    max-width: 900px;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -54,8 +19,8 @@
 
 .articlevente {
     position: relative;
-    width: 345px;
-    height: 345px;
+    width: 275px;
+    height: 275px;
     overflow: hidden;
 }
 
@@ -89,7 +54,7 @@
 /* fin */
 /* SECTION ARTICLE */
 .articlesI {
-    max-width: 773px;
+    max-width: 900px;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -105,7 +70,7 @@
 }
 
 .article-i img {
-    max-width: 773px;
+    max-width: 900px;
 }
 
 .article-i h2 {
@@ -142,26 +107,92 @@
 }
 
 /* fin */
-/* assamblage artcilesI et asideI */
-.part2 {
-    display: flex;
-    flex-direction: row;
-    max-width: 1160px;
+
+
+@media screen and (min-width: 769px) and (max-width: 959px) {
+
+    .article {
+        max-width: 700px;
+        margin-bottom: 40px;
+    }
+
+    .articlevente {
+        position: relative;
+        width: 225px;
+        height: 225px;
+        overflow: hidden;
+    }
+
+    .articlevente img{
+        width: 225px;
+        height: 225px;
+    }
+
+    .lienarticle {
+        position: absolute;
+        width: 60%;
+        top: 120px;
+        right: 15%;
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 0 auto;
+        padding: 5px 15px;
+        color: black;
+        text-decoration: none;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .articlesI {
+        max-width: 700px;
+        padding-bottom: 40px;
+    }
+
+    .article-i img {
+        max-width: 700px;
+    }
+    
+
 }
 
-/* aside */
-.asideI {
-    max-width: 307px;
-    width: 100%;
-    height: 484px;
-}
+@media screen and (max-width: 768px) {
+    .article {
+        max-width: 300px;
+        margin-bottom: 40px;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-.asideI h2 {
-    text-align: center;
-    position: relative;
-}
+    .articlevente {
+        display: none;
+    }
 
-@media screen and (min-width: 769px) and (max-width: 1199px) {
+    .lienarticle {
+        position: absolute;
+        width: 60%;
+        top: 150px;
+        right: 15%;
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 0 auto;
+        padding: 5px 15px;
+        color: black;
+        text-decoration: none;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .articlesI {
+        max-width: 450px;
+        padding-bottom: 40px;
+    }
+
+    .article-i img {
+        max-width: 450px;
+    }
+    .article-i a {
+
+        width: 40%;
+
+    }
 
 
 }

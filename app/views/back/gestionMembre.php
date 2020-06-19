@@ -1,6 +1,6 @@
 <?php 
-    include_once "app/views/back/layouts/head.php";
-    include_once "app/views/back/layouts/header.php";
+    include_once "app/Views/back/layouts/head.php";
+    include_once "app/Views/back/layouts/header.php";
     if(!empty($_POST)){
         $errors = $inscription;
     }
@@ -14,20 +14,19 @@
 
     <section class="membre-panel">
 
-    <form action="" method="post">
 
-    <table>
+    <table class="table">
 
         <tr>
 
-            <td class="titre-table">ID</td>
-            <td class="titre-table">Email</td>
-            <td class="titre-table">Nom de famille</td>
-            <td class="titre-table">Prénom</td>
-            <td class="titre-table">Date de création</td>
-            <td class="titre-table">Admin</td>
-            <td class="titre-table">Accès panel</td>
-            <td class="titre-table">Supprimer</td>
+            <th class="font-text">ID</th>
+            <th class="font-text">Email</th>
+            <th class="font-text">Nom de famille</th>
+            <th class="font-text">Prénom</th>
+            <th class="font-text">Date de création</th>
+            <th class="font-text">Admin</th>
+            <th class="font-text">Accès panel</th>
+            <th class="font-text">Supprimer</th>
 
         </tr>
 
@@ -53,7 +52,7 @@
         
     </table>
 
-    </form>
+  
 
     <div class="create-member">
 
@@ -118,5 +117,5 @@ endif
 
 
 <?php
-    include_once "app/views/back/layouts/head.php";
+    include_once "app/Views/back/layouts/head.php";
 ?>

@@ -1,6 +1,6 @@
 <?php
-include_once "app/views/front/layouts/head.php";
-include_once "app/views/front/layouts/header.php";
+include_once "app/Views/front/layouts/head.php";
+include_once "app/Views/front/layouts/header.php";
     if(!empty($_POST)){
         $error = $connexion;
     };
@@ -46,5 +46,5 @@ include_once "app/views/front/layouts/header.php";
 </main>
 
 <?php
-include_once 'app/views/front/layouts/footer.php'
+include_once 'app/Views/front/layouts/footer.php'
 ?>

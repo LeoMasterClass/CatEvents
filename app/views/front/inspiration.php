@@ -1,11 +1,11 @@
 <?php
-include_once "app/views/front/layouts/head.php";
-include_once "app/views/front/layouts/header.php"
+include_once "app/Views/front/layouts/head.php";
+include_once "app/Views/front/layouts/header.php"
 ?>
 
 
 <main class="container">
-    <div class="part2">
+
     <section class="inspiration">  
         <h1 class="font-titre">Inspirations</h2>
         <article>
@@ -16,11 +16,10 @@ include_once "app/views/front/layouts/header.php"
             <?php endwhile ?>
         </article>
     </section>
-    <?php include_once 'app/views/front/layouts/aside.php' ?>
-    </div>
+
 </main>
 
 
 <?php
-include_once 'app/views/front/layouts/footer.php'
+include_once 'app/Views/front/layouts/footer.php'
 ?>

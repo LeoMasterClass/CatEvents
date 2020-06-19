@@ -1,8 +1,8 @@
 <?php
 
-namespace Projet\models;
+namespace Projet\Models;
 
-class membresAdminManager extends Manager
+class MembresAdminManager extends Manager
 {
     //Va permettre de voir tout les articles de la table articles
     public function showMembreManage(){

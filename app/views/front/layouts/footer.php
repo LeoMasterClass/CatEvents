@@ -1,19 +1,14 @@
 <!-- footer -->
 <footer>
     <aside class="info">
-    <div class="casefooter">
-        <ul class="font-titre">Votre compte
-            <li class="font-titre"><a href="">-Informations personnelles</a></li>
-            <li class="font-titre"><a href="">-Commandes</a></li>
-        </ul>
-    </div>
+
     <div class="casefooter">
         <ul class="font-titre">Produits
-            <li class="font-titre"><a href="">-Guirlandes</a></li>
-            <li class="font-titre"><a href="">-Boites</a></li>
-            <li class="font-titre"><a href="">-Confettis</a></li>
-            <li class="font-titre"><a href="">-Attrape-rêves</a></li>
-            <li class="font-titre"><a href="">-Décorations murales</a></li>
+            <li class="font-titre"><a href="#">-Guirlandes</a></li>
+            <li class="font-titre"><a href="#">-Boites</a></li>
+            <li class="font-titre"><a href="#">-Confettis</a></li>
+            <li class="font-titre"><a href="#">-Attrape-rêves</a></li>
+            <li class="font-titre"><a href="#">-Décorations murales</a></li>
         </ul>
     </div>
     <div class="casefooter">
@@ -36,9 +31,9 @@
     </div>
     <div class="casefooter">
         <ul class="reseaux font-titre">Réseaux
-            <li><a href="https://www.facebook.com/Cateventsfr"><img src="app/public/img/logo/logo-facebook.png" alt="Facebook"></a></li>
-            <li><a href="https://www.instagram.com/catevents_fr/"><img src="app/public/img/logo/logo-instagram.png" alt="Instagram"></a></li>
-            <li><a href="https://www.pinterest.fr/giulia56/"><img src="app/public/img/logo/logo-pinterest.png" alt="Pinterest"></a></li>
+            <li><a href="https://www.facebook.com/Cateventsfr"><svg width="30" height="30"><image href="app/public/img/SVG/facebook.svg" alt="facebook" width="30" height="30" /></svg></a></li>
+            <li><a href="https://www.instagram.com/catevents_fr/"><svg width="30" height="30"><image href="app/public/img/SVG/instagram.svg" alt="instagram" width="30" height="30" /></svg></a></li>
+            <li><a href="https://www.pinterest.fr/giulia56/"><svg width="30" height="30"><image href="app/public/img/SVG/pinterest.svg" alt="pinterest" width="30" height="30"/></svg></a></li>
         </ul>
     </div>
     </aside>

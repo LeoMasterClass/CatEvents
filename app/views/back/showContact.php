@@ -1,6 +1,6 @@
 <?php 
-    include_once "app/views/back/layouts/head.php";
-    include_once "app/views/back/layouts/header.php";
+    include_once "app/Views/back/layouts/head.php";
+    include_once "app/Views/back/layouts/header.php";
 ?>
 
 
@@ -8,15 +8,15 @@
 
     <section class="article-panel">
     
-    <table>
+    <table class="table">
     <tr>
-            <td class="titre-table">ID</td>
-            <td class="titre-table">Nom</td>
-            <td class="titre-table">Email</td>
-            <td class="titre-table">Objet</td>
-            <td class="titre-table">Message</td>
-            <td class="titre-table">Date de réception</td>
-            <td class="titre-table">Supprimer</td>
+            <th class="font-text">ID</th>
+            <th class="font-text">Nom</th>
+            <th class="font-text">Email</th>
+            <th class="font-text">Objet</th>
+            <th class="font-text">Message</th>
+            <th class="font-text">Date de réception</th>
+            <th class="font-text">Supprimer</th>
         </tr>
     
         <?php while($showContact = $showContacts->fetch()) : ?>
@@ -38,5 +38,5 @@
 
 
 <?php
-    include_once "app/views/back/layouts/head.php";
+    include_once "app/Views/back/layouts/head.php";
 ?>

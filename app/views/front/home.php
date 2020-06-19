@@ -1,43 +1,48 @@
 <?php
-    include_once "app/views/front/layouts/head.php";
-    include_once "app/views/front/layouts/header.php";
+    include_once "app/Views/front/layouts/head.php";
+    include_once "app/Views/front/layouts/header.php";
 ?>
 
 <main class="container">
     <!-- partie slider -->
     <!-- taille image slider 1080x525 -->
-    <div class="slider">
-        <ul>
+    <div id="slider" class="slider">
+        <ul class="slides">
         <?php while($lien = $liens->fetch()) : ?>
-            <li><img src="app\public\img\DIY\1_DIY-Sac_Lapin\Banniere-Sac_Lapin_texte.jpg" alt="" width="1080"
+            <li class="slide">
+                <img src="app\public\img\DIY\1_DIY-Sac_Lapin\Banniere-Sac_Lapin_texte.jpg" alt="" width="1080"
                     height="525">
-                <div class="bloc_lien">
-                    <a href="index.php?action=article&id=<?= $lien['id'] ?>" class="lien_slider">Lire la suite</a>
+                <div class="bloc-titre">
+                    <a href="index.php?action=article&id=<?= $lien['id'] ?>" class="lien_slider font-texte">Lire la suite</a>
                 </div>
             </li>
 
-            <li><img src="app\public\img\DIY\2_DIY-Un_bouquet_pour_maman\Bannière_-_Un_bouquet_pour_maman_avec_texte.jpg"
+            <li class="slide">
+                <img src="app\public\img\DIY\2_DIY-Un_bouquet_pour_maman\Bannière_-_Un_bouquet_pour_maman_avec_texte.jpg"
                     alt="" width="1080" height="525">
-                <div class="bloc_lien">
-                    <a href="index.php?action=article&id=<?= $lien['id'] ?>" class="lien_slider">Lire la suite</a>
+                <div class="bloc-titre">
+                    <a href="index.php?action=article&id=<?= $lien['id'] ?>" class="lien_slider font-texte">Lire la suite</a>
                 </div>
             </li>
 
-            <li><img src="app\public\img\DIY\3_DIY-Les_citrouilles_de_papier\Banniere-Les_citrouilles_de_papier_avec_texte.jpg"
+            <li class="slide">
+                <img src="app\public\img\DIY\3_DIY-Les_citrouilles_de_papier\Banniere-Les_citrouilles_de_papier_avec_texte.jpg"
                     alt="" width="1080" height="525">
-                <div class="bloc_lien">
-                    <a href="index.php?action=article&id=<?= $lien['id'] ?>" class="lien_slider">Lire la suite</a>
+                <div class="bloc-titre">
+                    <a href="index.php?action=article&id=<?= $lien['id'] ?>" class="lien_slider font-texte">Lire la suite</a>
                 </div>
             </li>
 
-            <li><img src="app\public\img\DIY\4_DIY-Une_cage_illuminée_pour_Mamie\Banniere-Une_cage_pour_mamie_avec_texte.jpg"
+            <li class="slide">
+                <img src="app\public\img\DIY\4_DIY-Une_cage_illuminée_pour_Mamie\Banniere-Une_cage_pour_mamie_avec_texte.jpg"
                     alt="" width="1080" height="525">
-                <div class="bloc_lien">
-                    <a href="index.php?action=article&id=<?= $lien['id'] ?>" class="lien_slider">Lire la suite</a>
+                <div class="bloc-titre">
+                    <a href="index.php?action=article&id=<?= $lien['id'] ?>" class="lien_slider font-texte">Lire la suite</a>
                 </div>
             </li>
         <?php endwhile ?>
         </ul>
+
     </div>
     <!-- partie article en vente -->
     <section class="article">
@@ -66,15 +71,10 @@
         </section>
 
 
-
-
-
-
-        <?php include_once 'app/views/front/layouts/aside.php' ?>
     </div>
     <!-- fin -->
 </main>
 
 <?php
-include_once 'app/views/front/layouts/footer.php'
+include_once 'app/Views/front/layouts/footer.php'
 ?>

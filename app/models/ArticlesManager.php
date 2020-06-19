@@ -1,6 +1,6 @@
 <?php
 
-namespace Projet\models;
+namespace Projet\Models;
 
 class ArticlesManager extends Manager
 {

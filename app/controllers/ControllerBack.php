@@ -1,6 +1,6 @@
 <?php
 
-namespace Projet\controllers;
+namespace Projet\Controllers;
 
 class ControllerBack
 {
@@ -9,7 +9,7 @@ class ControllerBack
     {
         
 
-        require 'app/views/back/admin.php';
+        require 'app/Views/back/admin.php';
     }
     
 
@@ -20,8 +20,10 @@ class ControllerBack
 
             $errors = []; 
             
-            $email = $_POST['email'];
-            $password = $_POST['password'];
+            $email = !empty($_POST['email']) ? $_POST['email'] : NULL;
+            $password = !empty($_POST['password']) ? $_POST['password'] : NULL;
+
+
 
 
             $connexionManager = new \Projet\Models\ConnexionAdminManager();
@@ -47,7 +49,7 @@ class ControllerBack
         }
         $connexion = connexionAdmin();
 
-        require 'app/views/back/loginAdmin.php';
+        require 'app/Views/back/loginAdmin.php';
     }
 
 
@@ -66,7 +68,7 @@ class ControllerBack
         $showArticleManage= new \Projet\Models\ArticlesAdminManager();
         $showTables = $showArticleManage->showArticleManage();
 
-        require 'app/views/back/articlesAdmin.php';
+        require 'app/Views/back/articlesAdmin.php';
 
     }
 
@@ -120,7 +122,7 @@ class ControllerBack
             }
         }
         
-        require 'app/views/back/articleUpdate.php';
+        require 'app/Views/back/articleUpdate.php';
         
     }
     // Va permettre de supprimer des articles de la table articles
@@ -131,7 +133,7 @@ class ControllerBack
 
         header('Location: indexBack.php?action=articlesAdmin');
 
-        require 'app/views/back/articlesAdmin.php';
+        require 'app/Views/back/articlesAdmin.php';
     
     }
 
@@ -178,7 +180,7 @@ class ControllerBack
             }
         }
         
-        require 'app/views/back/articleCreate.php';
+        require 'app/Views/back/articleCreate.php';
     }
     
     
@@ -196,9 +198,9 @@ class ControllerBack
     function gestionMembre(){
          // Va permettre de voir tout les membres de la table users
         function showUsers(){
-            $showMembreManage= new \Projet\Models\membresAdminManager();
+            $showMembreManage= new \Projet\Models\MembresAdminManager();
             $showUsers = $showMembreManage->showMembreManage();
-            var_dump($showUsers);
+
 
             return $showUsers;
         }
@@ -238,7 +240,7 @@ class ControllerBack
     
     
      
-                    $inscriptionManager = new \Projet\Models\membresAdminManager();
+                    $inscriptionManager = new \Projet\Models\MembresAdminManager();
                     $inscriptionManager->createMembreManage($firstName,$name,$email,$password);
     
     
@@ -250,40 +252,40 @@ class ControllerBack
         }
         $inscription = createUsers();
   
-        require 'app/views/back/gestionMembre.php';
+        require 'app/Views/back/gestionMembre.php';
         
     }
 
     function upgradeUsers($id){
 
-        $CrochetManager = new \Projet\Models\membresAdminManager;
+        $CrochetManager = new \Projet\Models\MembresAdminManager;
         $updateUser = $CrochetManager->upgradeMembreManage($id);
 
         header('Location: indexBack.php?action=gestionMembre');
 
-        require 'app/views/back/gestionMembre.php';
+        require 'app/Views/back/gestionMembre.php';
     
     }
 
     function reduceUsers($id){
 
-        $CrochetManager = new \Projet\Models\membresAdminManager;
+        $CrochetManager = new \Projet\Models\MembresAdminManager;
         $updateUser = $CrochetManager->reduceMembreManage($id);
 
         header('Location: indexBack.php?action=gestionMembre');
 
-        require 'app/views/back/gestionMembre.php';
+        require 'app/Views/back/gestionMembre.php';
     
     }
 
     function deleteUsers($id){
 
-        $CrochetManager = new \Projet\Models\membresAdminManager;
+        $CrochetManager = new \Projet\Models\MembresAdminManager;
         $deleteUser = $CrochetManager->deleteMembreManage($id);
 
         header('Location: indexBack.php?action=gestionMembre');
 
-        require 'app/views/back/gestionMembre.php';
+        require 'app/Views/back/gestionMembre.php';
     
     }
 
@@ -300,20 +302,20 @@ class ControllerBack
 //  Function d'affichage des messages reçu
     function showContact()
     {
-        $showContactManage= new \Projet\Models\contactAdminManager();
+        $showContactManage= new \Projet\Models\ContactAdminManager();
         $showContacts = $showContactManage->showContactManage();
 
-        require 'app/views/back/showContact.php';
+        require 'app/Views/back/showContact.php';
     }
 
     function deleteContact($id){
 
-        $deleteManager = new \Projet\Models\contactAdminManager;
+        $deleteManager = new \Projet\Models\ContactAdminManager;
         $deleteUser = $deleteManager->deleteContactManage($id);
 
         header('Location: indexBack.php?action=showContact');
 
-        require 'app/views/back/showContact.php';
+        require 'app/Views/back/showContact.php';
     
     }
 
@@ -329,20 +331,20 @@ class ControllerBack
 
     function showInspi()
     {
-        $showInspiManage= new \Projet\Models\inspiAdminManager();
+        $showInspiManage = new \Projet\Models\InspiAdminManager();
         $showInspis = $showInspiManage->showInspiManage();
 
-        require 'app/views/back/showInspi.php';
+        require 'app/Views/back/showInspi.php';
     }
     
     function createInspi()
     {
         extract($_POST);
         
-        if (isset($_POST['desc'], $_POST['alt'], $_FILES['image']) && !empty($_POST)) {
+        if (isset($_POST['description'], $_POST['alt'], $_FILES['image']) && !empty($_POST)) {
 
             $img = $_FILES['image'];
-            $desc=htmlentities($_POST['desc']);
+            $description=htmlentities($_POST['description']);
             $alt=htmlentities($_POST['alt']);
 
             $image= "app/public/img/image/" . strtolower($img['name']);
@@ -351,13 +353,13 @@ class ControllerBack
             $imageun = finfo_open(FILEINFO_MIME_TYPE);
             $imageun = finfo_file($imageun, $img['tmp_name']);
             
-            if ($imageun === 'image/png' || $imageun === 'image/jpeg' && $imagedeux === 'image/png' || $imagedeux === 'image/jpeg') {
+            if ($imageun === 'image/png' || $imageun === 'image/jpeg') {
 
-                $createInspi = new \Projet\Models\inspiAdminManager();
-                $createInspi->createInspiManage($img, $image, $desc, $alt );
+                $createInspi = new \Projet\Models\InspiAdminManager();
+                $createInspi->createInspiManage($img, $image, $description, $alt );
                 move_uploaded_file($img['tmp_name'], "app/public/img/image/" . $img['name']);
 
-            } elseif ($imageun === false && $imagedeux === false) {
+            } elseif ($imageun === false) {
 
                 $error = "Le format n'est pas détecté";
                 echo $error;
@@ -370,15 +372,17 @@ class ControllerBack
             }
         }
 
-        require 'app/views/back/createInspi.php';
+        require 'app/Views/back/createInspi.php';
     }
 
-    function deleteInspi()
+    function deleteInspi($id)
     {
-        $deleteInspiManage= new \Projet\Models\inspiAdminManager();
-        $deleteInspi = $deleteInspiManage->showInspiManage($id);
+        $deleteInspiManage= new \Projet\Models\InspiAdminManager();
+        $deleteInspi = $deleteInspiManage->deleteInspiManage($id);
 
-        require 'app/views/back/showInspi.php';
+        header('Location: indexBack.php?action=showInspi');
+
+        require 'app/Views/back/showInspi.php';
     }
 
 
@@ -395,6 +399,6 @@ class ControllerBack
         session_destroy();
         header('Location: /');
 
-        require 'app/views/back/decoAdmin.php';
+        require 'app/Views/back/decoAdmin.php';
     }
 }

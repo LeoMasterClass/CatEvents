@@ -1,28 +1,29 @@
 <?php
 
-namespace Projet\models;
+namespace Projet\Models;
 
-class inspiAdminManager extends Manager
+class InspiAdminManager extends Manager
 {
 // gere les infos rentrer par l'utilisateur
-    public function showInspiManage(){
+    public function showInspiManage()
+    {
         $bdd = $this->dbConnect();
-        $inspi = $bdd->prepare("SELECT id, desc, alt FROM inspirations ORDER BY id ASC");
+        $inspi = $bdd->prepare("SELECT id, description, alt FROM inspirations ORDER BY id ASC");
         $inspi->execute(array());
         return $inspi;
     }
-    public function createInspiManage($img, $image, $desc, $alt)
+    public function createInspiManage($img, $image, $description, $alt)
     {
         $bdd = $this->dbConnect();
-        $createArticleManage = $bdd->prepare("INSERT INTO inspirations (image, desc, alt) VALUES (?, ?, ?)");
-        $createArticleManage->execute(array($img, $image, $desc, $alt));
-        return $createArticleManage;
+        $createInspiManage = $bdd->prepare("INSERT INTO inspirations (image, description, alt) VALUES (?, ?, ?)");
+        $createInspiManage->execute(array($image, $description, $alt));
+        return $createInspiManage;
     }
     public function deleteInspiManage($id){
         $bdd = $this->dbConnect();
-        $deleteContactManage = $bdd->prepare("DELETE FROM inspirations WHERE id = ?");
-        $deleteContactManage->execute(array($id));
-        $deleteContactManage->fetch();
-        return $deleteContactManage;
+        $deleteInspiManage = $bdd->prepare("DELETE FROM inspirations WHERE id = ?");
+        $deleteInspiManage->execute(array($id));
+        $deleteInspiManage->fetch();
+        return $deleteInspiManage;
     }
 }

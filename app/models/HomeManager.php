@@ -1,6 +1,6 @@
 <?php
 
-namespace Projet\models;
+namespace Projet\Models;
 
 class HomeManager extends Manager
 {

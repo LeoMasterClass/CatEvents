@@ -59,3 +59,17 @@
     width: 100%;
     background-color: rgba(255, 255, 255, 0.5);
 }
+
+@media screen and (max-width: 768px) {
+    .diy{
+        max-width: 500px;
+    }
+
+    .diy article .hoverDIY{
+        opacity: 1;
+    }
+
+    .diy article .hoverDIY:hover{
+        opacity: 0;
+    }
+}

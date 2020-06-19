@@ -6,7 +6,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 try {
 // appele au controllerBack
-$controllerBack = new \Projet\controllers\ControllerBack();
+$controllerBack = new \Projet\Controllers\ControllerBack();
 if(isset($_GET['action'])){
     // Renvoie a la page demander + test si log en admin
     if($_GET['action'] == 'admin'){
@@ -16,35 +16,35 @@ if(isset($_GET['action'])){
             header('Location: /');
         }
     }
-    else if($_GET['action'] == 'articlesAdmin'){
+    elseif($_GET['action'] == 'articlesAdmin'){
         if ($_SESSION['admin'] == 1) {
         $controllerBack->showArticle();
         }else{
             header('Location: /');
         }
     }
-    else if($_GET['action'] == 'articlesCreate'){
+    elseif($_GET['action'] == 'articlesCreate'){
         if ($_SESSION['admin'] == 1) {
         $controllerBack->articleCreate();
         }else{
             header('Location: /');
         }
     }
-    else if($_GET['action'] == 'articleUpdate'){
+    elseif($_GET['action'] == 'articleUpdate'){
         if ($_SESSION['admin'] == 1) {
         $controllerBack->updateArticle();
         }else{
             header('Location: /');
         }
     }
-    else if($_GET['action'] == 'gestionMembre'){
+    elseif($_GET['action'] == 'gestionMembre'){
         if ($_SESSION['admin'] == 1) {
         $controllerBack->gestionMembre();
         }else{
             header('Location: /');
         }
     }
-    else if($_GET['action'] == 'showContact'){
+    elseif($_GET['action'] == 'showContact'){
         if ($_SESSION['admin'] == 1) {
         $controllerBack->ShowContact();
         }else{

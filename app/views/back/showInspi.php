@@ -1,33 +1,38 @@
 <?php
-    include_once "app/views/back/layouts/head.php";
-    include_once "app/views/back/layouts/header.php";
+    include_once "app/Views/back/layouts/head.php";
+    include_once "app/Views/back/layouts/header.php";
 ?>
 
 <main class="container">
 
-<table>
+<section class="inspi-panel">
+
+<table class="table">
     <tr>
-        <td class="titre-table">ID</td>
-        <td class="titre-table">Description</td>
-        <td class="titre-table">Alt associé</td>
-        <td class="titre-table">Ajout</td>
-        <td class="titre-table">Supprimer</td>
+        <th class="font-text">ID</th>
+        <th class="font-text">Description</th>
+        <th class="font-text">Alt associé</th>
+        <th class="font-text">Supprimer</th>
     </tr>
-    <?= var_dump($showInspis) ?>
-    <?php while ($showInspi = $showInspis->fetch()) : ?>
+
+
+    
+    <?php while($showInspi = $showInspis->fetch()) : ?>
     <tr>
         <td class="text-align"><?= $showInspi['id'] ?></td>
-        <td><?= $showInspi['desc'] ?></td>
+        <td><?= $showInspi['description'] ?></td>
         <td><?= $showInspi['alt'] ?></td>
-        <td><a href="indexBack.php?action=createInspi"><i class="icon-panel fas fa-plus"></i></a></td>
-        <td><a href="indexBack.php?action=deleteInspi&id=<?= $showInspi['id'] ?>"><i class="icon-panel fas fa-window-close"></i></a></td>       
+        <td><a href="indexBack.php?action=deleteInspi&id=<?= $showInspi['id'] ?>"><i class="icon-panel fas fa-window-close"></i></a></td>   
     </tr>
-    <?php endwhile ?>
+    <?php endwhile ?>    
+
         
 </table>
+<div><a href="indexBack.php?action=inspiCreate"><i class="fas fa-plus-circle"></i></a></div>
+</section>
 
 </main>
 
 <?php
-    include_once "app/views/back/layouts/head.php";
+    include_once "app/Views/back/layouts/head.php";
 ?>

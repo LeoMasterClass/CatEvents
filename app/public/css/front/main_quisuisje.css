@@ -22,3 +22,20 @@
 .quisuisje img{
     max-width: 773px;
 }
+
+@media screen and (min-width: 769px) and (max-width: 959px) {
+    .quisuisje{
+        max-width: 700px;
+    }
+    .quisuisje img{
+        max-width: 700px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .quisuisje{
+        max-width: 500px;
+    }
+    .quisuisje img{
+        max-width: 500px;
+    }
+}
