@@ -13,10 +13,10 @@
     </div>
     <div class="casefooter">
         <ul class="font-titre">A propos
-            <li class="font-titre"><a href="">-Mentions légales</a></li>
-            <li class="font-titre"><a href="">-CGV</a></li>
-            <li class="font-titre"><a href="">-Politique de confidentialité</a></li>
-            <li class="font-titre"><a href="index.php?action=contact">-Me contacter en ligne</a></li>
+            <li class="font-titre"><a href="#">-Mentions légales</a></li>
+            <li class="font-titre"><a href="#">-CGV</a></li>
+            <li class="font-titre"><a href="#">-Politique de confidentialité</a></li>
+            <li class="font-titre"><a href="contact">-Me contacter en ligne</a></li>
         </ul>
     </div>
     <div class="casefooter">
@@ -39,3 +39,4 @@
     </aside>
     <p class="font-titre">&copy CatEvents 2020</p>
 </footer>
+</body>

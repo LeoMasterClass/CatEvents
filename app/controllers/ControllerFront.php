@@ -30,7 +30,12 @@ class ControllerFront
 
         function contact(){
             extract($_POST);
-        
+
+            $name = !empty($_POST['nom']) ? $_POST['nom'] : NULL;
+            $email = !empty($_POST['email']) ? $_POST['email'] : NULL;
+            $objet = !empty($_POST['objet']) ? $_POST['objet'] : NULL;
+            $content = !empty($_POST['texte']) ? $_POST['texte'] : NULL;
+
             $validation = true;
         
             $errors = [];
@@ -62,11 +67,6 @@ class ControllerFront
                 $headers = 'Content-type: text/html; charset=utf-8' . "\r\n";
         
                 mail($to,$sujet,$message,$headers);
-                
-                $name = $_POST['nom'];
-                $email = $_POST['email'];
-                $objet = $_POST['objet'];
-                $content = $_POST['texte'];
 
                 $contactManager = new \Projet\Models\ContactManager();
                 $contactManager->postContact($name,$email,$objet,$content);
@@ -133,7 +133,7 @@ class ControllerFront
                 $_SESSION['password'] = $resultat['password'];
                 $_SESSION['id'] = $resultat['id'];
 
-                header('Location: index.php?action=compte');
+                header('Location: compte');
             } else {
                  return $errors;
             }
@@ -237,7 +237,7 @@ class ControllerFront
     function deconnexionFront()
     {
         session_destroy();
-        header('Location: index.php?action=connexion');
+        header('Location: connexion');
 
         require 'app/Views/front/deconnexion.php';
     }

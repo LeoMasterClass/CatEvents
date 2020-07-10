@@ -13,8 +13,9 @@ if(!empty($_POST)){
 
     <section class="contact">
 
-    <form method="post" action="">
-    
+    <div class="alert"></div>
+
+    <form id="contact-form" method="post" action="">
         <?php
             if(isset($errors)) :
             if($errors) :
@@ -38,28 +39,25 @@ if(!empty($_POST)){
             endif;
             endif
             ?>
-            <div class="">
+
                 <div class="input-contact">
                 <label for="nom" class="font-texte">Votre Nom(obligatoire)</label>
-                    <input type="text" name="nom" placeholder="" value="<?php if(isset($_POST['nom']))echo $_POST['nom'] ?>">
+                    <input type="text" id="name" name="nom" placeholder="" value="<?php if(isset($_POST['nom']))echo $_POST['nom'] ?>">
                 </div>
                 <div class="input-contact">
-                <label for="nom" class="font-texte">Votre Email(obligatoire)</label>
-                    <input type="text" name="email" placeholder="" value="<?php if(isset($_POST['email']))echo $_POST['email'] ?>">
+                <label for="email" class="font-texte">Votre Email(obligatoire)</label>
+                    <input type="text" id="email" name="email" placeholder="" value="<?php if(isset($_POST['email']))echo $_POST['email'] ?>">
                 </div>
                 <div class="input-contact">
-                <label for="nom" class="font-texte">Objet</label>
-                    <input type="text" name="objet" placeholder="" value="<?php if(isset($_POST['objet']))echo $_POST['objet'] ?>">
+                <label for="objet" class="font-texte">Objet</label>
+                    <input type="text" id="objet" name="objet" placeholder="" value="<?php if(isset($_POST['objet']))echo $_POST['objet'] ?>">
                 </div>
                 <div class="input-contact">
-                <label for="nom" class="font-texte">Votre message</label>
-                    <textarea name="texte" cols="40" rows="10" placeholder=""<?php if(isset($_POST['texte']))echo $_POST['texte'] ?>></textarea>
+                <label for="texte" class="font-texte">Votre message</label>
+                    <textarea name="texte" cols="40" rows="10" id="message" placeholder=""<?php if(isset($_POST['content']))echo $_POST['content'] ?>></textarea>
                 </div>
-            </div>
 
-            <div class="">
-                <input class="envoie-contact font-balloo" type="submit" value="Envoyer">
-            </div>
+            <input class="envoie-contact font-balloo" type="submit" id="submit" value="Envoyer">
 
         </form>
 

@@ -28,7 +28,7 @@
 
         
 </table>
-<div><a href="indexBack.php?action=inspiCreate"><i class="fas fa-plus-circle"></i></a></div>
+<div class="bouton-add"><a href="inspi-creation"><button class="add">Ajouter</button></a></div>
 </section>
 
 </main>

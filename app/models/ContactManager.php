@@ -14,19 +14,3 @@ class ContactManager extends Manager
     }
 
 }
-
-// public function addMail($lastname, $firstname, $mail, $content)
-//     {
-//         $bdd = $this->dbConnect();
-//         $req = $bdd->prepare('INSERT INTO contact( dates, lastname, firstname,  mail, content ) VALUE(NOW(), ?, ?, ?, ?)');
-//         $req->execute(array($lastname, $firstname, $mail, $content));
-//         return $req;
-//     }
-
-
-
-    // $name = isset($_POST['name']);
-    // $email = isset($_POST['email']);
-    // $objet = isset($_POST['objet']);
-    // $content = isset($_POST['content']);
-

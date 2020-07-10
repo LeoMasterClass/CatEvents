@@ -23,7 +23,7 @@
             <label for="navigation-mobile" class="navigation-mobile"><img src="app/public/img/image/burger-menu-icon-14.jpg"
                     alt="menu button"></label>
             <ul>
-                <a href="home" class="font-nav"><li>Accueil</li></a>
+                <a href="/" class="font-nav"><li>Accueil</li></a>
                 <a href="concept" class="font-nav"><li>Le concept</li></a>
                 <a href="quisuisje" class="font-nav"><li>Qui suis-je ?</li></a>
                 <a href="DIY" class="font-nav"><li>DIY</li></a>
@@ -32,6 +32,10 @@
                 <a href="contact" class="font-nav"><li>Me contacter</li></a>
             </ul>
         </nav>
+
+        <div id="cookieBar" class="cookie-bar">
+            <p>Ce site web utilise des cookies - Consulter notre politique des cookies ! <button id="accept">OK</button></p>
+        </div>
 
 
     </header>

@@ -2,7 +2,7 @@
 
 ## Description
 
-CatEvents site de vente de produit fait main.
+Projet de fin d'année pour certification.
 
 ## Languages
 
@@ -20,3 +20,25 @@ CatEvents site de vente de produit fait main.
 * Animation CSS
 * Panel d'administration
 * Slider simple
+
+## Accès administration
+
+Ajout dans l'url de "/admin" qui renvoie directement a la page de connexion.
+
+* Identifiant : admin@admin.fr
+* Mot de passe : admin
+
+#### Fonctionnalités panel admin
+
+- Panel lié aux articles
+- Panel lié aux messages reçu via la page contact
+- Panel lié aux images de la page d'inspirations
+- Panel lié a la gestion des membres
+
+## Version
+
+1.O
+
+## Auteur
+
+Léo Lorin

@@ -24,13 +24,13 @@
             <td><a href="index.php?action=article&id=<?= $showTable['id'] ?>"><?= $showTable['title'] ?></a></td>
             <td><?= $showTable['extract'] ?></td>
             <td><?= date('d-m-Y', strtotime($showTable['created_at'])) ?></td>
-            <td><a href="indexBack.php?action=articleUpdate&id=<?= $showTable['id'] ?>"><i class="icon-panel fas fa-edit"></i></a></td>
+            <td><a href="edition-article-<?= $showTable['id'] ?>"><i class="icon-panel fas fa-edit"></i></a></td>
             <td><a href="indexBack.php?action=deleteArticle&id=<?= $showTable['id'] ?>"><i class="icon-panel fas fa-window-close"></i></a></td>       
         </tr>
         <?php endwhile ?>
         
     </table>
-    <div><a href="indexBack.php?action=articlesCreate"><i style='color:black;' class="fas fa-plus-circle"></i></a></div>
+    <div class="bouton-add"><a href="article-creation"><button class="add">Ajouter</button></a></div>
 
     </section>
 

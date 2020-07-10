@@ -5,6 +5,29 @@ body{
     background-color: rgb(243,222,203);
 }
 
+/* gestion barre de cookie */
+
+header{
+    position: relative;
+}
+
+.cookie-bar{
+    position: absolute;
+    position: fixed;
+    bottom: 0;
+    padding: 15px 0;
+    width: 100%;
+    background-color: bisque;
+    z-index: 5000;
+}
+.cookie-bar p{
+    text-align: center;
+}
+.cookie-bar p button{
+    padding: 5px 5px;
+    margin: 0 5px;
+}
+
 /* alignement barre-connexion barre-navigation */
 .barre-connexion ul,.barre-navigation ul{
     list-style-type: none;
@@ -132,12 +155,6 @@ body{
     .barre-connexion ul li{
         font-size: 1.1rem;
     }
-
-
-
-
-
-
     .barre-navigation {
         position: relative;
         display: flex;

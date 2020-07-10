@@ -13,8 +13,8 @@
         <h2 class="font-titre">Gestion des articles...</h2>
 
         <ul>
-            <li class="font-text"><a class="showfleche" href="indexBack.php?action=articlesAdmin">-Panel articles</a></li>
-            <li class="font-text"><a class="showfleche" href="indexBack.php?action=articlesCreate">-Créer un article</a></li>
+            <li class="font-text"><a class="showfleche" href="article-panel">-Panel articles</a></li>
+            <li class="font-text"><a class="showfleche" href="article-creation">-Créer un article</a></li>
         </ul>
 
     </div>
@@ -24,7 +24,7 @@
         <h2 class="font-titre">Gestion des messages contact...</h2>
 
         <ul>
-            <li class="font-text"><a class="showfleche" href="indexBack.php?action=showContact">-Panel message de contact</a></li>
+            <li class="font-text"><a class="showfleche" href="contact-panel">-Panel message de contact</a></li>
 
         </ul>
 
@@ -35,8 +35,8 @@
         <h2 class="font-titre">Gestions des images d'inspiration...</h2>
 
         <ul>
-            <li class="font-text"><a class="showfleche" href="indexBack.php?action=showInspi">-Panel inspirations</a></li>
-            <li class="font-text"><a class="showfleche" href="indexBack.php?action=createInspi">-Ajouter une inspiration</a></li>
+            <li class="font-text"><a class="showfleche" href="inspi-panel">-Panel inspirations</a></li>
+            <li class="font-text"><a class="showfleche" href="inspi-creation">-Ajouter une inspiration</a></li>
         </ul>
 
     </div>
@@ -46,7 +46,7 @@
         <h2 class="font-titre">Gestions des membres utilisateurs...</h2>
 
         <ul>
-            <li class="font-text"><a class="showfleche" href="indexBack.php?action=gestionMembre">-Panel utilisateur</a></li>
+            <li class="font-text"><a class="showfleche" href="membre-panel">-Panel utilisateur</a></li>
         </ul>
 
     </div>

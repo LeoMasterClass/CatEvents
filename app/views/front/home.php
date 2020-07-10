@@ -65,7 +65,7 @@
                 <img src="<?= $article['image'] ?>" alt="<?= $article['alt'] ?>">
                 <h2 class="font-texte"><?= $article['title'] ?></h2>
                 <p class="font-texte"><?= $article['extract'] ?></p>
-                <a href="index.php?action=article&id=<?= $article['id'] ?>" class="font-texte">Lire la suite</a>
+                <a href="article-<?= $article['id'] ?>" class="font-texte">Lire la suite</a>
             </article>
             <?php endwhile ?>
         </section>

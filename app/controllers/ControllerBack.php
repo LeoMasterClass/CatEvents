@@ -22,6 +22,7 @@ class ControllerBack
             
             $email = !empty($_POST['email']) ? $_POST['email'] : NULL;
             $password = !empty($_POST['password']) ? $_POST['password'] : NULL;
+            $admin = !empty($_POST['admin']) ? $_POST['admin'] : NULL;
 
 
 
@@ -39,7 +40,7 @@ class ControllerBack
                 $_SESSION['id'] = $resultat['id'];
                 $_SESSION['admin'] = $resultat['admin'];
                 if ($_SESSION['admin'] == 1) {
-                    header('Location: indexBack.php?action=admin');
+                    header('Location: dashboard');
                 }else{
                     header('Location: /');
                 }
