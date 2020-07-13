@@ -122,29 +122,12 @@ CREATE TABLE IF NOT EXISTS `post_contact` (
   `content` longtext NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
--- Listage des données de la table catevents.post_contact : ~18 rows (environ)
+-- Listage des données de la table catevents.post_contact : ~9 rows (environ)
 /*!40000 ALTER TABLE `post_contact` DISABLE KEYS */;
 INSERT INTO `post_contact` (`id`, `name`, `email`, `objet`, `content`, `created_at`) VALUES
-	(26, 'Julia', 'julia@live.fr', 'leo', 'Je te contact car j\'ai besoin d\'un site pour bientôt ', '2020-06-22 16:05:52'),
-	(27, 'ajax', 'ajax@ajax.com', 'ajax', 'ajax', NULL),
-	(28, 'ajax', 'ajax@ajax.com', 'ajax', 'ajax', NULL),
-	(29, 'ajax', 'ajax@ajax.com', 'ajax', 'ajax', NULL),
-	(30, 'ajax', 'ajax@ajax.com', 'ajax', 'ajax', NULL),
-	(31, 'ajax', 'ajax@ajax.com', 'ajax', 'ajax', NULL),
-	(32, 'ajax', 'ajax@ajax.com', 'ajax', 'ajax', NULL),
-	(33, 'ajax', 'ajax@ajax.com', 'ajax', 'ajx', NULL),
-	(34, 'ajax', 'ajax@ajax.com', 'ajax', 'ajax', NULL),
-	(35, 'ajax', 'ajax@ajax.com', 'ajax', 'ajax', NULL),
-	(36, 'ajax', 'ajax@ajax.com', 'ajax', 'ajax', NULL),
-	(37, 'ajax', 'ajax@ajax.com', 'ajax', 'ajax', NULL),
-	(38, 'ajax', 'ajax@ajax.com', 'ajax', 'ajax', NULL),
-	(39, 'ajax', 'ajax@ajax.com', 'ajax', 'ajax', NULL),
-	(40, 'ajax', 'ajax@test.com', 'ajax', 'jaxx', NULL),
-	(41, 'ajax', 'ajax@aajx.fr', 'ajax', 'ajax', NULL),
-	(42, 'Patate', 'ajax@ajax.fr', 'aj', 'aj', NULL),
-	(43, 'ff', 'ff@ss.fr', 'ff', 'ff', NULL);
+	(38, 'leo', 'leolorin9@gmail.com', 'leo', 'leo', '2020-07-13 19:18:37');
 /*!40000 ALTER TABLE `post_contact` ENABLE KEYS */;
 
 -- Listage de la structure de la table catevents. users
